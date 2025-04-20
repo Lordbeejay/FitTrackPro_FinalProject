@@ -1,0 +1,10 @@
+{
+  "josaiah": {
+    "password": "borres",
+    "createdAt": "2024-04-20T12:00:00.000Z"
+  },
+  "jane.smith": {
+    "password": "anotherStrongPwd",
+    "createdAt": "2024-04-19T18:30:00.000Z"
+  }
+}
