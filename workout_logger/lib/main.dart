@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const WorkoutApp());
@@ -80,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
       debugPrint('Users saved successfully');
     } catch (e) {
       debugPrint('Error saving users: $e');
-      rethrow;
+      throw e;
     }
   }
 
@@ -386,8 +387,8 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
       floatingActionButton: _selectedIndex == 0
           ? FloatingActionButton(
         onPressed: _addWorkout,
-        tooltip: 'Add Workout',
         child: const Icon(Icons.add),
+        tooltip: 'Add Workout',
       )
           : null,
       bottomNavigationBar: BottomNavigationBar(
@@ -599,8 +600,6 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 }
 
 class WorkoutDialog extends StatefulWidget {
-  const WorkoutDialog({super.key});
-
   @override
   _WorkoutDialogState createState() => _WorkoutDialogState();
 }
