@@ -207,8 +207,8 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
       floatingActionButton: _selectedIndex == 0 && !_isWorkoutInProgress
           ? FloatingActionButton(
         onPressed: _addWorkout,
-        child: const Icon(Icons.add),
         tooltip: 'Add Workout',
+        child: const Icon(Icons.add),
       )
           : null,
       bottomNavigationBar: BottomNavigationBar(
@@ -539,7 +539,7 @@ class _WorkoutDialogState extends State<WorkoutDialog> {
                       onTap: () => _addExercise(exercise),
                     );
                   });
-                }).toList(),
+                }),
               ],
               const SizedBox(height: 20),
               if (_exercises.isNotEmpty) ...[
@@ -555,7 +555,7 @@ class _WorkoutDialogState extends State<WorkoutDialog> {
                     title: Text(exercise['name']),
                     subtitle: Text('${exercise['sets']} sets x ${exercise['reps'] ?? exercise['duration']}'),
                   );
-                }).toList(),
+                }),
               ],
             ],
           ),

@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
       debugPrint('Users saved successfully');
     } catch (e) {
       debugPrint('Error saving users: $e');
-      throw e;
+      rethrow;
     }
   }
 
