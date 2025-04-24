@@ -145,18 +145,20 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
     });
   }
 
-  Future<void> _skipRestPeriod() async {
+  void _skipRestPeriod() {
     _restTimer?.cancel();
     setState(() {
       _isResting = false;
     });
-    await _moveToNextExercise();
+    _moveToNextExercise();
   }
 
-  Future<void> _moveToNextExercise() async {
-    if (_currentExerciseIndex < _workouts[0]['exercises'].length - 1) {
+  void _moveToNextExercise() {
+    final exercises = _workouts[0]['exercises'];
+    if (_currentExerciseIndex < exercises.length - 1) {
       setState(() {
         _currentExerciseIndex++;
+        _isResting = false;
       });
     } else {
       setState(() {
@@ -195,24 +197,21 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 
   Widget _buildWorkoutInProgressScreen() {
     final exercisesRaw = _workouts[0]['exercises'];
-    final exercises = (exercisesRaw as List).map<Map<String, dynamic>>(
-          (e) => Map<String, dynamic>.from(e),
-    ).toList();
-
+    final exercises = List<Map<String, dynamic>>.from(exercisesRaw);
     final currentExercise = exercises[_currentExerciseIndex];
 
     return WorkoutInProgressScreen(
       currentExercise: currentExercise,
       exercises: exercises,
       isResting: _isResting,
-      restSeconds: _restSeconds,
-      onRestPeriodEnd: () => _moveToNextExercise(),
-      onSkipRest: () => _skipRestPeriod(),
-      onBack: _endWorkoutEarly, // ✅ Add this
-      onNext: _moveToNextExercise, // ✅ Add this
+      restSeconds: _remainingRestTime,
+      onRestPeriodEnd: _moveToNextExercise,
+      onSkipRest: _skipRestPeriod,
+      onNext: _startRestPeriod,
+      onBack: _endWorkoutEarly,
     );
-
   }
+
   Widget _buildHomeScreen() {
     if (_isWorkoutInProgress) return _buildWorkoutInProgressScreen();
 
