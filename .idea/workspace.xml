@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb60c82-7835-4a1d-947d-e56ebe3aeb8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/stat_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_create_sheet.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_home_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_in_progress_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_start_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/login_signup.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/workout_tracker.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
