@@ -70,7 +70,12 @@ class UserStatsService {
   }
   Future<void> updateStatsOnComplete() async {
     final stats = await loadStats();
-    stats.totalWorkoutsPerformed += 1;
+
+    // Increment the total workouts
+    stats.totalWorkouts += 1;
+
+    // Save updated stats
     await saveStats(stats);
   }
+
 }
