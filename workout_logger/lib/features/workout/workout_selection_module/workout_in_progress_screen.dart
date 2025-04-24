@@ -58,11 +58,27 @@ class WorkoutInProgressScreen extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  Icon(
-                    isResting ? Icons.hourglass_bottom : Icons.fitness_center,
-                    size: 80,
-                    color: isResting ? Colors.orange : Colors.green,
-                  ),
+                  if (currentExercise['image'] != null)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: currentExercise['image'].toString().startsWith('http')
+                          ? Image.network(
+                              currentExercise['image'],
+                              height: 200,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset(
+                              currentExercise['image'],
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
+                    )
+                  else
+                    Icon(
+                      isResting ? Icons.hourglass_bottom : Icons.fitness_center,
+                      size: 80,
+                      color: isResting ? Colors.orange : Colors.green,
+                    ),
                   const SizedBox(height: 16),
                   Text(
                     currentExercise['name'],
@@ -81,32 +97,32 @@ class WorkoutInProgressScreen extends StatelessWidget {
             Center(
               child: isResting
                   ? Column(
-                children: [
-                  Text(
-                    'Rest Time: $restSeconds sec',
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton.icon(
-                    onPressed: onSkipRest,
-                    icon: const Icon(Icons.skip_next),
-                    label: const Text('Skip Rest'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.redAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                  ),
-                ],
-              )
+                      children: [
+                        Text(
+                          'Rest Time: $restSeconds sec',
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                        const SizedBox(height: 10),
+                        ElevatedButton.icon(
+                          onPressed: onSkipRest,
+                          icon: const Icon(Icons.skip_next),
+                          label: const Text('Skip Rest'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.redAccent,
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ],
+                    )
                   : ElevatedButton.icon(
-                onPressed: onNext,
-                icon: const Icon(Icons.navigate_next),
-                label: Text(isLast ? 'Finish Workout' : 'Next Exercise'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                ),
-              ),
+                      onPressed: onNext,
+                      icon: const Icon(Icons.navigate_next),
+                      label: Text(isLast ? 'Finish Workout' : 'Next Exercise'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        foregroundColor: Colors.white,
+                      ),
+                    ),
             ),
             const SizedBox(height: 30),
           ],

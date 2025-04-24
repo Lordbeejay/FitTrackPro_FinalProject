@@ -31,29 +31,29 @@ class _WorkoutCreateSheetState extends State<WorkoutCreateSheet>
   final List<String> _targetAreas = ['Back', 'Chest', 'Legs', 'Arms', 'Abs'];
   final Map<String, List<Map<String, dynamic>>> _exerciseDatabase = {
     'Back': [
-      {'name': 'Pull-ups', 'sets': 3, 'reps': 10, 'target': 'Back'},
-      {'name': 'Lat Pulldown', 'sets': 3, 'reps': 12, 'target': 'Back'},
-      {'name': 'Bent-over Rows', 'sets': 4, 'reps': 10, 'target': 'Back'},
+      {'name': 'Pull-ups', 'sets': 3, 'reps': 10, 'target': 'Back', 'image': 'assets/images/pull_ups.jpg'},
+      {'name': 'Lat Pulldown', 'sets': 3, 'reps': 12, 'target': 'Back', 'image': 'assets/images/lat_pulldown.jpg'},
+      {'name': 'Bent-over Rows', 'sets': 4, 'reps': 10, 'target': 'Back', 'image': 'assets/images/bent_over_rows.jpg' },
     ],
     'Chest': [
-      {'name': 'Bench Press', 'sets': 4, 'reps': 8, 'target': 'Chest'},
-      {'name': 'Push-ups', 'sets': 3, 'reps': 15, 'target': 'Chest'},
-      {'name': 'Incline Dumbbell Press', 'sets': 3, 'reps': 10, 'target': 'Chest'},
+      {'name': 'Bench Press', 'sets': 4, 'reps': 8, 'target': 'Chest', 'image': 'assets/images/bench_press.jpg'},
+      {'name': 'Push-ups', 'sets': 3, 'reps': 15, 'target': 'Chest', 'image': 'assets/images/push_ups.jpg'},
+      {'name': 'Incline Dumbbell Press', 'sets': 3, 'reps': 10, 'target': 'Chest', 'image': 'assets/images/inclide_dumbell_press.jpg'},
     ],
     'Legs': [
-      {'name': 'Squats', 'sets': 4, 'reps': 8, 'target': 'Legs'},
-      {'name': 'Lunges', 'sets': 3, 'reps': 10, 'target': 'Legs'},
-      {'name': 'Leg Press', 'sets': 3, 'reps': 12, 'target': 'Legs'},
+      {'name': 'Squats', 'sets': 4, 'reps': 8, 'target': 'Legs', 'image': 'assets/images/squats.jpg'},
+      {'name': 'Lunges', 'sets': 3, 'reps': 10, 'target': 'Legs', 'image': 'assets/images/lunges.jpg'},
+      {'name': 'Leg Press', 'sets': 3, 'reps': 12, 'target': 'Legs', 'image': 'assets/images/leg_press.jpg'},
     ],
     'Arms': [
-      {'name': 'Bicep Curls', 'sets': 3, 'reps': 12, 'target': 'Arms'},
-      {'name': 'Tricep Dips', 'sets': 3, 'reps': 10, 'target': 'Arms'},
-      {'name': 'Hammer Curls', 'sets': 3, 'reps': 12, 'target': 'Arms'},
+      {'name': 'Bicep Curls', 'sets': 3, 'reps': 12, 'target': 'Arms', 'image': 'assets/images/bicep_curl.jpg'},
+      {'name': 'Tricep Dips', 'sets': 3, 'reps': 10, 'target': 'Arms', 'image': 'assets/images/tricep_dips.jpg'},
+      {'name': 'Hammer Curls', 'sets': 3, 'reps': 12, 'target': 'Arms', 'image': 'assets/images/hammer_curls.jpg'},
     ],
     'Abs': [
-      {'name': 'Crunches', 'sets': 3, 'reps': 20, 'target': 'Abs'},
-      {'name': 'Plank', 'sets': 3, 'reps': 1, 'duration': '30 sec', 'target': 'Abs'},
-      {'name': 'Leg Raises', 'sets': 3, 'reps': 15, 'target': 'Abs'},
+      {'name': 'Crunches', 'sets': 3, 'reps': 20, 'target': 'Abs', 'image': 'assets/images/crunches.jpg'},
+      {'name': 'Plank', 'sets': 3, 'reps': 1, 'duration': '30 sec', 'target': 'Abs', 'image': 'assets/images/plank.jpg'},
+      {'name': 'Leg Raises', 'sets': 3, 'reps': 15, 'target': 'Abs', 'image': 'assets/images/leg_raises.jpg'},
     ],
   };
 
