@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 
-class AuthService {
+class AuthService with ChangeNotifier{
   late File _userFile;
   Map<String, dynamic> _users = {};
 

@@ -2,23 +2,28 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:workout_logger/core/services/user_stats_service.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
+import 'package:workout_logger/core/services/xp_service.dart';
 import 'package:workout_logger/features/auth/login/login_page.dart';
 import 'package:workout_logger/features/profile/profile_page.dart';
-import 'package:workout_logger/features/workout/workout_create_sheet.dart';
-import 'package:workout_logger/features/workout/workout_selection_module/workout_service.dart';
-import 'package:workout_logger/features/workout/workout_selection_module/workout_in_progress_screen.dart';
+import 'package:workout_logger/features/workout/homepage/workout_create_sheet.dart';
+import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_service.dart';
+import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_in_progress_screen.dart';
+import 'package:workout_logger/features/workout/timer/rest_controller.dart';
 
 class WorkoutHomePage extends StatefulWidget {
   final String username;
   final AuthService authService;
+  final XPService xpService;
 
   const WorkoutHomePage({
     super.key,
     required this.username,
     required this.authService,
+    required this.xpService,
   });
 
   @override
@@ -27,14 +32,8 @@ class WorkoutHomePage extends StatefulWidget {
 
 class _WorkoutHomePageState extends State<WorkoutHomePage> {
   List<Map<String, dynamic>> _workouts = [];
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
   bool _isWorkoutInProgress = false;
-  int _currentExerciseIndex = 0;
-  bool _isResting = false;
-  int _restSeconds = 30;
-  int _remainingRestTime = 30;
-  Timer? _restTimer;
-
   late final UserStatsService _userStatsService;
   late final WorkoutService _workoutService;
 
@@ -45,13 +44,13 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
     _workoutService = WorkoutService(
       username: widget.username,
       userStatsService: _userStatsService,
+      xpService: widget.xpService,
     );
     _loadWorkouts();
   }
 
   @override
   void dispose() {
-    _restTimer?.cancel();
     super.dispose();
   }
 
@@ -108,84 +107,30 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
     await _userStatsService.updateStatsOnDelete(workout);
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   void _startWorkout(List<Map<String, dynamic>> exercises) async {
-    final typedExercises = List<Map<String, dynamic>>.from(exercises);
-
     setState(() {
       _isWorkoutInProgress = true;
-      _currentExerciseIndex = 0;
-      _isResting = false;
     });
 
-    await _workoutService.startWorkout(typedExercises);
-  }
-
-  void _startRestPeriod() {
-    _restTimer?.cancel();
-    setState(() {
-      _isResting = true;
-      _remainingRestTime = _restSeconds;
-    });
-
-    _restTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (_remainingRestTime > 0) {
-        setState(() {
-          _remainingRestTime--;
-        });
-      } else {
-        _restTimer?.cancel();
-        _moveToNextExercise();
-      }
-    });
-  }
-
-  Future<void> _skipRestPeriod() async {
-    _restTimer?.cancel();
-    setState(() {
-      _isResting = false;
-    });
-    await _moveToNextExercise();
-  }
-
-  Future<void> _moveToNextExercise() async {
-    if (_currentExerciseIndex < _workouts[0]['exercises'].length - 1) {
-      setState(() {
-        _currentExerciseIndex++;
-      });
-    } else {
-      setState(() {
-        _isWorkoutInProgress = false;
-      });
-      await _workoutService.completeWorkout();
-      _showWorkoutCompleteDialog();
-    }
+    final workoutName = exercises.first['workoutName'] ?? 'Unnamed Workout';
+    await _workoutService.startWorkout(exercises, workoutName);
   }
 
   void _endWorkoutEarly() {
-    _restTimer?.cancel();
     setState(() {
       _isWorkoutInProgress = false;
-      _isResting = false;
     });
   }
 
   void _showWorkoutCompleteDialog() {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (_) => AlertDialog(
         title: const Text('Workout Complete!'),
         content: const Text('Great job on finishing your workout!'),
         actions: [
           TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () => Navigator.pop(context),
             child: const Text('OK'),
           ),
         ],
@@ -195,24 +140,27 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 
   Widget _buildWorkoutInProgressScreen() {
     final exercisesRaw = _workouts[0]['exercises'];
-    final exercises = (exercisesRaw as List).map<Map<String, dynamic>>(
-          (e) => Map<String, dynamic>.from(e),
-    ).toList();
+    final exercises = (exercisesRaw as List)
+        .map<Map<String, dynamic>>((e) => Map<String, dynamic>.from(e))
+        .toList();
 
-    final currentExercise = exercises[_currentExerciseIndex];
-
-    return WorkoutInProgressScreen(
-      currentExercise: currentExercise,
-      exercises: exercises,
-      isResting: _isResting,
-      restSeconds: _restSeconds,
-      onRestPeriodEnd: () => _moveToNextExercise(),
-      onSkipRest: () => _skipRestPeriod(),
-      onBack: _endWorkoutEarly, // ✅ Add this
-      onNext: _moveToNextExercise, // ✅ Add this
+    return ChangeNotifierProvider(
+      create: (_) => RestTimerController(),
+      child: WorkoutInProgressScreen(
+        exercises: exercises,
+        onWorkoutComplete: () async {
+          final workoutName = _workouts[0]['name'] ?? 'Unnamed Workout';
+          await _workoutService.completeWorkout(workoutName: workoutName);
+          _showWorkoutCompleteDialog();
+          setState(() {
+            _isWorkoutInProgress = false;
+          });
+        },
+        onBack: _endWorkoutEarly,
+      ),
     );
-
   }
+
   Widget _buildHomeScreen() {
     if (_isWorkoutInProgress) return _buildWorkoutInProgressScreen();
 
@@ -220,10 +168,8 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
       children: [
         const Padding(
           padding: EdgeInsets.all(16),
-          child: Text(
-            'Your Workouts',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
+          child: Text('Your Workouts',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         ),
         Expanded(
           child: _workouts.isEmpty
@@ -238,10 +184,7 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
                 child: ListTile(
                   contentPadding: const EdgeInsets.all(16),
                   leading: _getWorkoutIcon(workout['targetAreas'][0]),
-                  title: Text(
-                    workout['name'],
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  title: Text(workout['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -276,8 +219,10 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final totalExercises = _workouts.fold<int>(0, (sum, w) => sum + (w['exercises'] as List).length);
-    final lastWorkoutName = _workouts.isNotEmpty ? _workouts.first['name'] : null;
+    final totalExercises = _workouts.fold<int>(
+      0,
+          (sum, workout) => sum + ((workout['exercises'] as List).length),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -289,14 +234,14 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
           ),
         ],
       ),
-      body: _selectedIndex == 0
+      body: (_selectedIndex == 0)
           ? _buildHomeScreen()
           : ProfilePage(
         username: widget.username,
-        totalWorkouts: _workouts.length,
-        totalExercises: totalExercises,
-        lastWorkoutName: lastWorkoutName,
         onLogout: _confirmLogout,
+        lastWorkoutName: _workouts.isNotEmpty ? _workouts[0]['name'] : 'None yet',
+        totalExercises: totalExercises,
+        totalWorkouts: _workouts.length,
       ),
       floatingActionButton: _selectedIndex == 0 && !_isWorkoutInProgress
           ? FloatingActionButton(
@@ -305,14 +250,6 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
         child: const Icon(Icons.add),
       )
           : null,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
     );
   }
 
@@ -334,13 +271,17 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
         title: const Text('Confirm Logout'),
         content: const Text('Are you sure you want to log out?'),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
-          TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Logout')),
+          TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('Cancel')),
+          TextButton(
+              onPressed: () => Navigator.pop(context, true),
+              child: const Text('Logout')),
         ],
       ),
     );
 
-    if (shouldLogout == true) {
+    if (shouldLogout == true && mounted) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(

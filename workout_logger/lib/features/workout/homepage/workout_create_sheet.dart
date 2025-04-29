@@ -4,7 +4,7 @@ import 'package:workout_logger/core/services/user_stats_service.dart';
 class WorkoutCreateSheet extends StatefulWidget {
   final ScrollController scrollController;
   final Function(Map<String, dynamic>) onSave;
-  final UserStatsService userStatsService;  // Add this line to accept userStatsService
+  final UserStatsService userStatsService;
 
   const WorkoutCreateSheet({
     super.key,
@@ -41,8 +41,8 @@ class _WorkoutCreateSheetState extends State<WorkoutCreateSheet>
       {'name': 'Incline Dumbbell Press', 'sets': 3, 'reps': 10, 'target': 'Chest', 'image': 'assets/images/inclide_dumbell_press.jpg'},
     ],
     'Legs': [
-      {'name': 'Squats', 'sets': 4, 'reps': 8, 'target': 'Legs', 'image': 'assets/images/squats.jpg'},
-      {'name': 'Lunges', 'sets': 3, 'reps': 10, 'target': 'Legs', 'image': 'assets/images/lunges.jpg'},
+      {'name': 'Squats', 'sets': 4, 'reps': 8, 'target': 'Legs', 'image': 'assets/images/squats.png'},
+      {'name': 'Lunges', 'sets': 3, 'reps': 10, 'target': 'Legs', 'image': 'assets/images/lunges.jpeg'},
       {'name': 'Leg Press', 'sets': 3, 'reps': 12, 'target': 'Legs', 'image': 'assets/images/leg_press.jpg'},
     ],
     'Arms': [

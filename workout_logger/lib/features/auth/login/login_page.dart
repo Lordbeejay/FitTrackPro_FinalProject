@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
 import 'package:workout_logger/features/auth/signup/signup_page.dart';
-import 'package:workout_logger/features/workout/workout_home_page.dart';
+import 'package:workout_logger/features/dashboard/dashboard_page.dart';
+
+import '../../../core/services/xp_service.dart';
 
 class LoginPage extends StatelessWidget {
   final AuthService authService;
@@ -116,11 +118,14 @@ class _LoginFormState extends State<LoginForm> {
       if (!mounted) return;
 
       if (success) {
+        final username = _usernameController.text.trim();
+        final xpService = XPService(username: username); // <-- Create XPService
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) => WorkoutHomePage(
-              username: _usernameController.text.trim(),
+            builder: (_) => DashboardPage(
+              username: username,
               authService: widget.authService,
             ),
           ),
