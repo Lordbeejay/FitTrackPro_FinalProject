@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
+import 'package:workout_logger/core/services/xp_service.dart';
 import 'package:workout_logger/features/auth/signup/signup_page.dart';
 import 'package:workout_logger/features/dashboard/dashboard_page.dart';
-
-import '../../../core/services/xp_service.dart';
 
 class LoginPage extends StatelessWidget {
   final AuthService authService;
@@ -119,7 +118,7 @@ class _LoginFormState extends State<LoginForm> {
 
       if (success) {
         final username = _usernameController.text.trim();
-        final xpService = XPService(username: username); // <-- Create XPService
+        final xpService = XPService(username: username);
 
         Navigator.pushReplacement(
           context,
@@ -127,22 +126,19 @@ class _LoginFormState extends State<LoginForm> {
             builder: (_) => DashboardPage(
               username: username,
               authService: widget.authService,
+              xpService: xpService,
             ),
           ),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Invalid username or password'),
-          ),
+          const SnackBar(content: Text('Invalid username or password')),
         );
       }
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Error during login: $e'),
-        ),
+        SnackBar(content: Text('Error during login: $e')),
       );
     } finally {
       if (mounted) {
@@ -192,9 +188,8 @@ class _LoginFormState extends State<LoginForm> {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (_isLoading) ...[
+                  if (_isLoading)
                     const SizedBox(
                       height: 20,
                       width: 20,
@@ -203,12 +198,8 @@ class _LoginFormState extends State<LoginForm> {
                         strokeWidth: 2,
                       ),
                     ),
-                    const SizedBox(width: 12),
-                  ],
-                  const Text(
-                    'Login',
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  if (_isLoading) const SizedBox(width: 12),
+                  const Text('Login', style: TextStyle(fontSize: 16)),
                 ],
               ),
             ),

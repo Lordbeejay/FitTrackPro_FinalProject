@@ -10,11 +10,13 @@ import 'package:workout_logger/core/services/xp_service.dart';
 class DashboardPage extends StatefulWidget {
   final String username;
   final AuthService authService;
+  final XPService xpService;
 
   const DashboardPage({
-    super.key,
     required this.username,
     required this.authService,
+    required this.xpService,
+    super.key,
   });
 
   @override
@@ -23,28 +25,12 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
-  late final List<Widget> _pages;
+  late final XPService _xpService;
 
   @override
   void initState() {
     super.initState();
-    final xpService = XPService(username: widget.username);
-    _pages = [
-      WorkoutHomePage(
-        username: widget.username,
-        authService: widget.authService,
-        xpService: xpService,
-      ),
-      GoalsPage(),
-      RoutinePlannerPage(),
-      ProfilePage(
-        username: widget.username,
-        onLogout: _confirmLogout,
-        lastWorkoutName: 'None yet', // Update dynamically later
-        totalExercises: 0,
-        totalWorkouts: 0,
-      ),
-    ];
+    _xpService = XPService(username: widget.username);
   }
 
   void _onItemTapped(int index) {
@@ -84,19 +70,35 @@ class _DashboardPageState extends State<DashboardPage> {
     }
   }
 
+  Widget _getSelectedPage() {
+    switch (_selectedIndex) {
+      case 0:
+        return WorkoutHomePage(
+          username: widget.username,
+          authService: widget.authService,
+          xpService: _xpService,
+        );
+      case 1:
+        return GoalsPage();
+      case 2:
+        return RoutinePlannerPage();
+      case 3:
+        return ProfilePage(
+          username: widget.username,
+          onLogout: _confirmLogout,
+          lastWorkoutName: 'None yet', // can be updated dynamically later
+          totalExercises: 0,
+          totalWorkouts: 0,
+        );
+      default:
+        return const Center(child: Text('Unknown Page'));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        child: _pages[_selectedIndex],
-        transitionBuilder: (child, animation) {
-          return FadeTransition(
-            opacity: animation,
-            child: child,
-          );
-        },
-      ),
+      body: _getSelectedPage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

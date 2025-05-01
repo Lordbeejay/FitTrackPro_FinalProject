@@ -5,53 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb60c82-7835-4a1d-947d-e56ebe3aeb8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/constants/app_routes.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/workout.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/xp_progress.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/goal_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/local_database_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/schedule_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/utils/reminders.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/core/utils/time_utils.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goal_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goal_form.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_selection_module/workout_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_selection_module/workout_start_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/timer/notification_helper.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/timer/rest_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/timer/timer_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_details.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_stat_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/android/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/json/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/stat_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/stat_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_create_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_create_sheet.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_in_progress_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_selection_module/workout_in_progress_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_service.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/workout_selection_module/workout_start_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout_logger/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_logger/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,30 +72,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Dart Command Line App.widget_test.dart.executor&quot;: &quot;Run&quot;,
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Coding/CMSC_156_Midterms&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Dart Command Line App.widget_test.dart.executor": "Run",
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Coding/CMSC156_FitTrackPro",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "device.explorer",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Coding\CMSC_156_Midterms\workout_logger\lib\features\workout\homepage" />

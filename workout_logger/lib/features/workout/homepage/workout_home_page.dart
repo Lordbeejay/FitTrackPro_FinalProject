@@ -8,7 +8,6 @@ import 'package:workout_logger/core/services/user_stats_service.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
 import 'package:workout_logger/core/services/xp_service.dart';
 import 'package:workout_logger/features/auth/login/login_page.dart';
-import 'package:workout_logger/features/profile/profile_page.dart';
 import 'package:workout_logger/features/workout/homepage/workout_create_sheet.dart';
 import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_service.dart';
 import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_in_progress_screen.dart';
@@ -226,7 +225,7 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FitTrack Pro'),
+        title: const Text('FiTrack Pro'),
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -234,17 +233,10 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
           ),
         ],
       ),
-      body: (_selectedIndex == 0)
-          ? _buildHomeScreen()
-          : ProfilePage(
-        username: widget.username,
-        onLogout: _confirmLogout,
-        lastWorkoutName: _workouts.isNotEmpty ? _workouts[0]['name'] : 'None yet',
-        totalExercises: totalExercises,
-        totalWorkouts: _workouts.length,
-      ),
+      body: _buildHomeScreen(),
       floatingActionButton: _selectedIndex == 0 && !_isWorkoutInProgress
           ? FloatingActionButton(
+        heroTag: 'addWorkout',
         onPressed: _addWorkout,
         tooltip: 'Add Workout',
         child: const Icon(Icons.add),

@@ -32,6 +32,7 @@ class GoalsPage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'addGoal',
         onPressed: () {
           // Open GoalForm when FAB is pressed
           Navigator.push(

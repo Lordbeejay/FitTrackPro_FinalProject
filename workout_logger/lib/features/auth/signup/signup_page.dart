@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
 import 'package:workout_logger/features/auth/login/login_page.dart';
 
@@ -23,32 +24,21 @@ class SignupPage extends StatelessWidget {
           child: Center(
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircleAvatar(
                     radius: 60,
                     backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.fitness_center,
-                      size: 60,
-                      color: Color(0xFF2575FC),
-                    ),
+                    child: Icon(Icons.fitness_center, size: 60, color: Color(0xFF2575FC)),
                   ),
                   const SizedBox(height: 30),
                   const Text(
                     'Create Account',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   const SizedBox(height: 30),
                   Card(
                     elevation: 8,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: SignupForm(authService: authService),
@@ -64,10 +54,7 @@ class SignupPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text(
-                      'Already have an account? Login',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: const Text('Already have an account? Login', style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
@@ -90,9 +77,18 @@ class SignupForm extends StatefulWidget {
 
 class _SignupFormState extends State<SignupForm> {
   final _formKey = GlobalKey<FormState>();
+
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _weightController = TextEditingController();
+  final _heightController = TextEditingController();
+
+  String _selectedGender = 'Prefer not to say';
+  DateTime? _selectedDate;
   bool _isLoading = false;
 
   @override
@@ -100,7 +96,25 @@ class _SignupFormState extends State<SignupForm> {
     _usernameController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _firstNameController.dispose();
+    _lastNameController.dispose();
+    _emailController.dispose();
+    _weightController.dispose();
+    _heightController.dispose();
     super.dispose();
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final now = DateTime.now();
+    final picked = await showDatePicker(
+      context: context,
+      initialDate: now.subtract(const Duration(days: 365 * 18)),
+      firstDate: DateTime(1900),
+      lastDate: now,
+    );
+    if (picked != null) {
+      setState(() => _selectedDate = picked);
+    }
   }
 
   Future<void> _signup() async {
@@ -108,10 +122,14 @@ class _SignupFormState extends State<SignupForm> {
 
     if (_passwordController.text != _confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Passwords do not match'),
-          behavior: SnackBarBehavior.floating,
-        ),
+        const SnackBar(content: Text('Passwords do not match')),
+      );
+      return;
+    }
+
+    if (_selectedDate == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please select your date of birth')),
       );
       return;
     }
@@ -120,16 +138,21 @@ class _SignupFormState extends State<SignupForm> {
 
     try {
       final success = await widget.authService.signup(
-        _usernameController.text.trim(),
-        _passwordController.text.trim(),
+        username: _usernameController.text.trim(),
+        password: _passwordController.text.trim(),
+        firstName: _firstNameController.text.trim(),
+        lastName: _lastNameController.text.trim(),
+        email: _emailController.text.trim(),
+        gender: _selectedGender,
+        dateOfBirth: _selectedDate!.toIso8601String(),
+        weight: _weightController.text.trim(),
+        height: _heightController.text.trim(),
       );
 
       if (success) {
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Account created successfully!'),
-            behavior: SnackBarBehavior.floating,
-          ),
+          const SnackBar(content: Text('Account created successfully!')),
         );
         Navigator.pushReplacement(
           context,
@@ -138,85 +161,76 @@ class _SignupFormState extends State<SignupForm> {
           ),
         );
       } else {
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Username already exists'),
-            behavior: SnackBarBehavior.floating,
-          ),
+          const SnackBar(content: Text('Username already exists')),
         );
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Error creating account: $e'),
-          behavior: SnackBarBehavior.floating,
-        ),
+        SnackBar(content: Text('Error creating account: $e')),
       );
     } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
+      if (mounted) setState(() => _isLoading = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final dateText = _selectedDate == null
+        ? 'Select Date of Birth'
+        : DateFormat.yMMMMd().format(_selectedDate!);
+
     return Form(
       key: _formKey,
       child: Column(
         children: [
-          TextFormField(
-            controller: _usernameController,
+          _buildTextField(_firstNameController, 'First Name', Icons.person),
+          const SizedBox(height: 10),
+          _buildTextField(_lastNameController, 'Last Name', Icons.person_outline),
+          const SizedBox(height: 10),
+          _buildTextField(_emailController, 'Email', Icons.email),
+          const SizedBox(height: 10),
+          _buildTextField(_usernameController, 'Username', Icons.account_circle),
+          const SizedBox(height: 10),
+          _buildTextField(_passwordController, 'Password', Icons.lock, obscure: true),
+          const SizedBox(height: 10),
+          _buildTextField(_confirmPasswordController, 'Confirm Password', Icons.lock_outline, obscure: true),
+          const SizedBox(height: 10),
+          DropdownButtonFormField<String>(
+            value: _selectedGender,
+            items: const [
+              DropdownMenuItem(value: 'Male', child: Text('Male')),
+              DropdownMenuItem(value: 'Female', child: Text('Female')),
+              DropdownMenuItem(value: 'Prefer not to say', child: Text('Prefer not to say')),
+            ],
             decoration: const InputDecoration(
-              labelText: 'Username',
-              prefixIcon: Icon(Icons.person),
+              labelText: 'Gender',
               border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.transgender),
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter username';
-              }
-              if (value.length < 4) {
-                return 'Username must be at least 4 characters';
-              }
-              return null;
+            onChanged: (value) {
+              setState(() {
+                _selectedGender = value!;
+              });
             },
           ),
-          const SizedBox(height: 15),
-          TextFormField(
-            controller: _passwordController,
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: 'Password',
-              prefixIcon: Icon(Icons.lock),
-              border: OutlineInputBorder(),
+          const SizedBox(height: 10),
+          GestureDetector(
+            onTap: () => _selectDate(context),
+            child: InputDecorator(
+              decoration: const InputDecoration(
+                labelText: 'Date of Birth',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.cake),
+              ),
+              child: Text(dateText),
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter password';
-              }
-              if (value.length < 6) {
-                return 'Password must be at least 6 characters';
-              }
-              return null;
-            },
           ),
-          const SizedBox(height: 15),
-          TextFormField(
-            controller: _confirmPasswordController,
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: 'Confirm Password',
-              prefixIcon: Icon(Icons.lock),
-              border: OutlineInputBorder(),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please confirm password';
-              }
-              return null;
-            },
-          ),
+          const SizedBox(height: 10),
+          _buildTextField(_weightController, 'Weight (kg)', Icons.monitor_weight),
+          const SizedBox(height: 10),
+          _buildTextField(_heightController, 'Height (cm)', Icons.height),
           const SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
@@ -224,35 +238,32 @@ class _SignupFormState extends State<SignupForm> {
               onPressed: _isLoading ? null : _signup,
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (_isLoading) ...[
-                    const SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: CircularProgressIndicator(
-                        color: Colors.white,
-                        strokeWidth: 2,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                  ],
-                  const Text(
-                    'Sign Up',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
+              child: _isLoading
+                  ? const SizedBox(
+                height: 20,
+                width: 20,
+                child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+              )
+                  : const Text('Sign Up', style: TextStyle(fontSize: 16)),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildTextField(TextEditingController controller, String label, IconData icon, {bool obscure = false}) {
+    return TextFormField(
+      controller: controller,
+      obscureText: obscure,
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
+        prefixIcon: Icon(icon),
+      ),
+      validator: (value) => (value == null || value.isEmpty) ? 'Please enter $label' : null,
     );
   }
 }

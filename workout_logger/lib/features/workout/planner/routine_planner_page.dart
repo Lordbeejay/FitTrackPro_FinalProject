@@ -36,6 +36,7 @@ class RoutinePlannerPage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'addRoutine',
         onPressed: () {
           // Open RoutineFormPage when FAB is pressed
           Navigator.push(

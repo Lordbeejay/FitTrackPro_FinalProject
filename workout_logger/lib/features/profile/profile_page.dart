@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:workout_logger/core/models/user_stats.dart';
 import 'package:workout_logger/core/services/user_stats_service.dart';
 import 'package:workout_logger/core/services/xp_service.dart';
 import 'package:workout_logger/features/profile/widgets/editable_profile_header.dart';
 import 'package:workout_logger/features/profile/widgets/stat_card.dart';
+import 'package:workout_logger/features/profile/widgets/editable_stat_card.dart';
 import 'package:workout_logger/features/profile/widgets/xp_progress_bar.dart';
-import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
   final String username;
@@ -49,16 +50,22 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   void _resetStats() async {
+    final messenger = ScaffoldMessenger.of(context);
     await _userStatsService.resetStats();
-    await _xpService.resetProgress(); // Reset XP when stats are reset
+    await _xpService.resetProgress();
     _refreshStats();
-    ScaffoldMessenger.of(context).showSnackBar(
+    messenger.showSnackBar(
       const SnackBar(content: Text('Stats and XP have been reset')),
     );
   }
 
   void _updateUsername(String name) {
     setState(() => displayName = name);
+  }
+
+  void _updateUserDetails(UserStats updatedStats) async {
+    await _userStatsService.updateUserDetails(updatedStats);
+    _refreshStats();
   }
 
   @override
@@ -88,12 +95,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   onNameChanged: _updateUsername,
                 ),
                 const SizedBox(height: 30),
-                // XP Progress Bar
+
                 XPProgressBar(
                   currentXP: _xpService.progress.currentXP,
                   level: _xpService.progress.level,
+                  showTooltip: true,
                 ),
                 const SizedBox(height: 30),
+
+                const Text(
+                  'Workout Summary',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 12),
+
                 GridView.count(
                   shrinkWrap: true,
                   crossAxisCount: 2,
@@ -125,11 +140,107 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
                 const SizedBox(height: 20),
+                const Text(
+                  'User Details',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 12),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.person,
+                        label: 'First Name',
+                        value: stats.firstName,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(firstName: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.person_outline,
+                        label: 'Last Name',
+                        value: stats.lastName,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(lastName: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.email,
+                        label: 'Email',
+                        value: stats.email,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(email: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.transgender,
+                        label: 'Gender',
+                        value: stats.gender,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(gender: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.cake,
+                        label: 'Birthday',
+                        value: stats.dateOfBirth,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(dateOfBirth: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: EditableStatCard(
+                        icon: Icons.monitor_weight,
+                        label: 'Weight (kg)',
+                        value: stats.weight,
+                        onChanged: (value) {
+                          _updateUserDetails(stats.copyWith(weight: value));
+                        }, onValueChanged: (String newValue) {  },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+
+                EditableStatCard(
+                  icon: Icons.height,
+                  label: 'Height (cm)',
+                  value: stats.height,
+                  onChanged: (value) {
+                    _updateUserDetails(stats.copyWith(height: value));
+                  }, onValueChanged: (String newValue) {  },
+                ),
                 StatCard(
                   icon: Icons.date_range,
                   label: 'Last Workout Date',
                   value: stats.lastWorkoutDate?.toLocal().toString().split(' ')[0] ?? 'N/A',
                 ),
+
                 const SizedBox(height: 30),
                 Row(
                   children: [
