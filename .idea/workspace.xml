@@ -117,12 +117,12 @@
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="widget_test.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/workout_logger/test/widget_test.dart" />
+      <option name="filePath" value="$PROJECT_DIR$/fitrack_pro/test/widget_test.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/workout_logger" />
       <method v="2" />
     </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/workout_logger/lib/main.dart" />
+      <option name="filePath" value="$PROJECT_DIR$/fitrack_pro/lib/main.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
