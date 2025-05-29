@@ -100,13 +100,12 @@ class _MiniChallengeCardState extends State<MiniChallengeCard> {
                         builder: (_) => MiniChallengeScreen(
                           challenge: widget.challenge,
                           onComplete: () {
-                            setState(() {
-                              // Optionally update XP here
-                            });
+                            _loadStatus(); // <-- Immediately refresh status when challenge is started or progressed
+                            setState(() {});
                           },
                         ),
                       );
-                      _loadStatus();
+                      _loadStatus(); // Also refresh after modal closes
                     },
                     child: Text(buttonText),
                   ),
