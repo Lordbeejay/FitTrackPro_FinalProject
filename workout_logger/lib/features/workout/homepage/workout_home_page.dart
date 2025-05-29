@@ -12,6 +12,10 @@ import 'package:workout_logger/features/workout/homepage/workout_create_sheet.da
 import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_service.dart';
 import 'package:workout_logger/features/workout/homepage/workout_selection_module/workout_in_progress_screen.dart';
 import 'package:workout_logger/features/workout/timer/rest_controller.dart';
+import 'package:workout_logger/core/services/mini_challenge_service.dart';
+import 'package:workout_logger/features/workout/mini_challenge/mini_challenge_card.dart';
+import 'package:workout_logger/features/workout/mini_challenge/mini_challenge_screen.dart';
+import 'package:workout_logger/core/models/mini_challenge.dart';
 
 class WorkoutHomePage extends StatefulWidget {
   final String username;
@@ -163,66 +167,116 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
   Widget _buildHomeScreen() {
     if (_isWorkoutInProgress) return _buildWorkoutInProgressScreen();
 
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.all(16),
-          child: Text('Your Workouts',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        ),
-        Expanded(
-          child: _workouts.isEmpty
-              ? const Center(child: Text('No workouts yet. Tap + to get started.'))
-              : ListView.builder(
-            itemCount: _workouts.length,
-            itemBuilder: (_, index) {
-              final workout = _workouts[index];
-              return Card(
-                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.all(16),
-                  leading: _getWorkoutIcon(workout['targetAreas'][0]),
-                  title: Text(workout['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Target: ${workout['targetAreas'].join(', ')}'),
-                      Text('${workout['exercises'].length} exercises'),
-                    ],
-                  ),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.play_arrow, color: Colors.green),
-                        onPressed: () {
-                          final exercises = List<Map<String, dynamic>>.from(workout['exercises']);
-                          _startWorkout(exercises);
-                        },
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.delete, color: Colors.red),
-                        onPressed: () => _deleteWorkout(index),
-                      ),
-                    ],
+    final MiniChallengeService _challengeService = MiniChallengeService();
+
+    return FutureBuilder<MiniChallenge>(
+      future: _challengeService.getTodayChallenge(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final challenge = snapshot.data!;
+        return Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Your Workouts',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            // Add Workout button directly under the header
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text('Add Workout'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: const Size(180, 44),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-      ],
+                onPressed: _addWorkout,
+              ),
+            ),
+            Expanded(
+              child: _workouts.isEmpty
+                  ? const Center(child: Text('No workouts yet. Tap + to get started.'))
+                  : ListView.builder(
+                      itemCount: _workouts.length,
+                      itemBuilder: (_, index) {
+                        final workout = _workouts[index];
+                        return Card(
+                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          child: ListTile(
+                            contentPadding: const EdgeInsets.all(16),
+                            leading: _getWorkoutIcon(workout['targetAreas'][0]),
+                            title: Text(workout['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
+                            subtitle: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Target: ${workout['targetAreas'].join(', ')}'),
+                                Text('${workout['exercises'].length} exercises'),
+                              ],
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.play_arrow, color: Colors.green),
+                                  onPressed: () {
+                                    final exercises = List<Map<String, dynamic>>.from(workout['exercises']);
+                                    _startWorkout(exercises);
+                                  },
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.delete, color: Colors.red),
+                                  onPressed: () => _deleteWorkout(index),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+            ),
+            MiniChallengeCard(
+              challenge: challenge,
+              onStart: () async {
+                final completed = await _challengeService.isChallengeCompleted();
+                if (completed) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('You already completed today\'s challenge!')),
+                  );
+                  return;
+                }
+                await showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (_) => MiniChallengeScreen(
+                    challenge: challenge,
+                    onComplete: () {
+                      setState(() {
+                        // Optionally update XP here
+                      });
+                    },
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 16),
+          ],
+        );
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final totalExercises = _workouts.fold<int>(
-      0,
-          (sum, workout) => sum + ((workout['exercises'] as List).length),
-    );
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('FiTrack Pro'),
@@ -234,14 +288,6 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
         ],
       ),
       body: _buildHomeScreen(),
-      floatingActionButton: _selectedIndex == 0 && !_isWorkoutInProgress
-          ? FloatingActionButton(
-        heroTag: 'addWorkout',
-        onPressed: _addWorkout,
-        tooltip: 'Add Workout',
-        child: const Icon(Icons.add),
-      )
-          : null,
     );
   }
 
@@ -281,5 +327,79 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
         ),
       );
     }
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final MiniChallengeService _challengeService = MiniChallengeService();
+  MiniChallenge? _todayChallenge;
+  int _userXP = 0;
+  bool _loadingChallenge = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTodayChallenge();
+  }
+
+  Future<void> _loadTodayChallenge() async {
+    final challenge = await _challengeService.getTodayChallenge();
+    setState(() {
+      _todayChallenge = challenge;
+      _loadingChallenge = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_loadingChallenge || _todayChallenge == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Your Workouts",
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          // Add the Mini Challenge Card here
+          MiniChallengeCard(
+            challenge: _todayChallenge!,
+            onStart: () async {
+              final completed = await _challengeService.isChallengeCompleted();
+              if (completed) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('You already completed today\'s challenge!')),
+                );
+                return;
+              }
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => MiniChallengeScreen(
+                    challenge: _todayChallenge!,
+                    onComplete: () {
+                      setState(() {
+                        _userXP += _todayChallenge!.xpReward;
+                      });
+                    },
+                  ),
+                ),
+              );
+            },
+          ),
+          // ...your other workout cards...
+        ],
+      ),
+    );
   }
 }
