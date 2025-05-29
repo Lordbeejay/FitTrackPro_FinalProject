@@ -31,6 +31,7 @@ dependencies:
   shared_preferences: ^2.2.2
   image_picker: ^1.0.4 # or latest
   intl: ^0.18.1 # or latest
+  table_calendar: 3.0.9 # or latest
   flutter:
 
     sdk: flutter

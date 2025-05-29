@@ -9,6 +9,8 @@ class Routine {
   final Goal associatedGoal;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final DateTime scheduledDate;
+  final String difficulty;
 
   Routine({
     required this.id,
@@ -19,19 +21,33 @@ class Routine {
     required this.associatedGoal,
     required this.createdAt,
     required this.updatedAt,
+    required this.scheduledDate,
+    required this.difficulty,
   });
 
   // 👇 fromJson
   factory Routine.fromJson(Map<String, dynamic> json) {
+    DateTime parseDate(dynamic value) {
+      if (value == null) return DateTime.now();
+      if (value is DateTime) return value;
+      return DateTime.parse(value.toString());
+    }
+
     return Routine(
-      id: json['id'],
-      name: json['name'],
-      daysOfWeek: List<String>.from(json['daysOfWeek']),
-      exercises: List<String>.from(json['exercises']),
-      durationInMinutes: json['durationInMinutes'],
+      id: json['id'] ?? '',
+      name: json['name'] ?? '',
+      daysOfWeek:
+          (json['daysOfWeek'] as List?)?.map((e) => e.toString()).toList() ??
+              [],
+      exercises:
+          (json['exercises'] as List?)?.map((e) => e.toString()).toList() ??
+              [],
+      durationInMinutes: json['durationInMinutes'] ?? 0,
       associatedGoal: Goal.fromJson(json['associatedGoal']),
-      createdAt: DateTime.parse(json['createdAt']),
-      updatedAt: DateTime.parse(json['updatedAt']),
+      createdAt: parseDate(json['createdAt']),
+      updatedAt: parseDate(json['updatedAt']),
+      scheduledDate: parseDate(json['scheduledDate']),
+      difficulty: json['difficulty'] ?? 'Beginner',
     );
   }
 
@@ -46,6 +62,8 @@ class Routine {
       'associatedGoal': associatedGoal.toJson(),
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
+      'scheduledDate': scheduledDate.toIso8601String(),
+      'difficulty': difficulty,
     };
   }
 
@@ -57,6 +75,8 @@ class Routine {
     int? durationInMinutes,
     Goal? associatedGoal,
     DateTime? updatedAt,
+    DateTime? scheduledDate,
+    String? difficulty,
   }) {
     return Routine(
       id: id,
@@ -67,6 +87,8 @@ class Routine {
       associatedGoal: associatedGoal ?? this.associatedGoal,
       createdAt: createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
+      scheduledDate: scheduledDate ?? this.scheduledDate,
+      difficulty: difficulty ?? this.difficulty,
     );
   }
 }
