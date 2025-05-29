@@ -458,3 +458,44 @@ class _MiniChallengeScreenState extends State<MiniChallengeScreen> {
     );
   }
 }
+
+class ParsedChallenge {
+  final int sets;
+  final List<ExerciseTarget> exercises;
+  ParsedChallenge({required this.sets, required this.exercises});
+}
+
+class ExerciseTarget {
+  final String name;
+  final int reps;
+  ExerciseTarget({required this.name, required this.reps});
+}
+
+ParsedChallenge parseChallenge(String description) {
+  final lower = description.toLowerCase();
+  int sets = 1;
+  final setMatch = RegExp(r'(\d+)\s*sets?').firstMatch(lower);
+  if (setMatch != null) {
+    sets = int.parse(setMatch.group(1)!);
+  }
+
+  // Split by 'and' or commas for multiple exercises
+  final exerciseParts = description
+      .replaceAll(RegExp(r'\d+\s*sets? of'), '')
+      .split(RegExp(r',| and '))
+      .map((e) => e.trim())
+      .where((e) => e.isNotEmpty)
+      .toList();
+
+  final List<ExerciseTarget> exercises = [];
+  for (final part in exerciseParts) {
+    final match = RegExp(r'(\d+)\s*([a-zA-Z \-]+)').firstMatch(part);
+    if (match != null) {
+      final reps = int.parse(match.group(1)!);
+      final name = match.group(2)!.trim();
+      exercises.add(ExerciseTarget(name: name, reps: reps));
+    }
+  }
+
+  return ParsedChallenge(sets: sets, exercises: exercises);
+}
