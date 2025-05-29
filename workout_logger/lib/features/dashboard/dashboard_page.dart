@@ -6,6 +6,7 @@ import 'package:workout_logger/features/profile/profile_page.dart';
 import 'package:workout_logger/features/auth/login/login_page.dart';
 import 'package:workout_logger/core/services/auth_service.dart';
 import 'package:workout_logger/core/services/xp_service.dart';
+import 'package:workout_logger/features/workout/roulette/workout_roulette_page.dart';
 
 class DashboardPage extends StatefulWidget {
   final String username;
@@ -81,8 +82,10 @@ class _DashboardPageState extends State<DashboardPage> {
       case 1:
         return GoalsPage();
       case 2:
-        return RoutinePlannerPage();
+        return WorkoutRoulettePage();
       case 3:
+        return RoutinePlannerPage();
+      case 4:
         return ProfilePage(
           username: widget.username,
           onLogout: _confirmLogout,
@@ -109,7 +112,9 @@ class _DashboardPageState extends State<DashboardPage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.flag), label: 'Goals'),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Planner'),
+          BottomNavigationBarItem(icon: Icon(Icons.casino), label: 'Roulette'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today), label: 'Planner'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
