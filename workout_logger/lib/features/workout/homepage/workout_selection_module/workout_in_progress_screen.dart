@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_logger/features/workout/timer/rest_controller.dart';
+import 'package:fitrack_pro/features/workout/timer/rest_controller.dart';
 
 class WorkoutInProgressScreen extends StatefulWidget {
   final List<Map<String, dynamic>> exercises;

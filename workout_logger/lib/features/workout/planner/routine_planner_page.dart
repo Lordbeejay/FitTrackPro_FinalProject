@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_logger/core/models/goal.dart';
-import 'package:workout_logger/core/services/goal_service.dart';
-import 'package:workout_logger/features/workout/goals/goal_card.dart';
-import 'package:workout_logger/features/workout/goals/goals_page.dart';
-import 'package:workout_logger/features/workout/planner/routine_model.dart';
-import 'package:workout_logger/features/workout/planner/routine_service.dart';
+import 'package:fitrack_pro/core/models/goal.dart';
+import 'package:fitrack_pro/core/services/goal_service.dart';
+import 'package:fitrack_pro/features/workout/goals/goal_card.dart';
+import 'package:fitrack_pro/features/workout/goals/goals_page.dart';
+import 'package:fitrack_pro/features/workout/planner/routine_model.dart';
+import 'package:fitrack_pro/features/workout/planner/routine_service.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 const TextStyle kHeaderStyle = TextStyle(

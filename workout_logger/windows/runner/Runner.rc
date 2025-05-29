@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "workout_logger" "\0"
+            VALUE "CompanyName", "com.cmsc" "\0"
+            VALUE "FileDescription", "fitrack_pro" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "workout_logger" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "workout_logger.exe" "\0"
-            VALUE "ProductName", "workout_logger" "\0"
+            VALUE "InternalName", "fitrack_pro" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.cmsc. All rights reserved." "\0"
+            VALUE "OriginalFilename", "fitrack_pro.exe" "\0"
+            VALUE "ProductName", "fitrack_pro" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

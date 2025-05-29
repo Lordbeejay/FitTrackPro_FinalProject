@@ -17,7 +17,7 @@ class NotificationHelper {
     final windowsSettings = WindowsInitializationSettings(
       appName: 'FitTrack Pro',
       // your app name
-      appUserModelId: 'com.example.fittrackpro',
+      appUserModelId: 'com.cmsc.fittrackpro',
       // use your actual Windows App User Model ID
       guid: const Uuid().v4(), // generate a random GUID
     );

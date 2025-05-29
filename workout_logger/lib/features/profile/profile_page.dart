@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_logger/core/models/user_stats.dart';
-import 'package:workout_logger/core/services/user_stats_service.dart';
-import 'package:workout_logger/core/services/xp_service.dart';
-import 'package:workout_logger/features/profile/widgets/editable_profile_header.dart';
-import 'package:workout_logger/features/profile/widgets/stat_card.dart';
-import 'package:workout_logger/features/profile/widgets/editable_stat_card.dart';
-import 'package:workout_logger/features/profile/widgets/xp_progress_bar.dart';
+import 'package:fitrack_pro/core/models/user_stats.dart';
+import 'package:fitrack_pro/core/services/user_stats_service.dart';
+import 'package:fitrack_pro/core/services/xp_service.dart';
+import 'package:fitrack_pro/features/profile/widgets/editable_profile_header.dart';
+import 'package:fitrack_pro/features/profile/widgets/stat_card.dart';
+import 'package:fitrack_pro/features/profile/widgets/editable_stat_card.dart';
+import 'package:fitrack_pro/features/profile/widgets/xp_progress_bar.dart';
 
 class ProfilePage extends StatefulWidget {
   final String username;

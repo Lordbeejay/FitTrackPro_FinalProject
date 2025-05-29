@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
-import 'package:workout_logger/core/models/goal.dart';
+import 'package:fitrack_pro/core/models/goal.dart';
 
 class GoalService with ChangeNotifier {
   final List<Goal> _goals = [];

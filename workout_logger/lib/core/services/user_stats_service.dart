@@ -1,5 +1,5 @@
-import 'package:workout_logger/core/models/user_stats.dart';
-import 'package:workout_logger/core/services/local_database_service.dart';
+import 'package:fitrack_pro/core/models/user_stats.dart';
+import 'package:fitrack_pro/core/services/local_database_service.dart';
 
 class UserStatsService {
   final String username;

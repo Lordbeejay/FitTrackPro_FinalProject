@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:workout_logger/core/services/auth_service.dart';
-import 'package:workout_logger/core/services/xp_service.dart';
-import 'package:workout_logger/features/auth/signup/signup_page.dart';
-import 'package:workout_logger/features/dashboard/dashboard_page.dart';
+import 'package:fitrack_pro/core/services/auth_service.dart';
+import 'package:fitrack_pro/core/services/xp_service.dart';
+import 'package:fitrack_pro/features/auth/signup/signup_page.dart';
+import 'package:fitrack_pro/features/dashboard/dashboard_page.dart';
 
 class LoginPage extends StatelessWidget {
   final AuthService authService;

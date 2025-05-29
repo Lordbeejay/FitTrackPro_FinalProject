@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:workout_logger/core/models/mini_challenge.dart';
-import 'package:workout_logger/core/services/mini_challenge_service.dart';
-import 'package:workout_logger/features/workout/mini_challenge/mini_challenge_screen.dart';
+import 'package:fitrack_pro/core/models/mini_challenge.dart';
+import 'package:fitrack_pro/core/services/mini_challenge_service.dart';
+import 'package:fitrack_pro/features/workout/mini_challenge/mini_challenge_screen.dart';
 
 class MiniChallengeCard extends StatefulWidget {
   final MiniChallenge challenge;

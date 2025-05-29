@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'goal_form.dart';
 import 'goal_card.dart';
-import 'package:workout_logger/core/services/goal_service.dart';
+import 'package:fitrack_pro/core/services/goal_service.dart';
 
 class GoalsPage extends StatelessWidget {
   const GoalsPage({super.key});

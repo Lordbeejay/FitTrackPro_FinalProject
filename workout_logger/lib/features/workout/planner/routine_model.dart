@@ -1,4 +1,4 @@
-import 'package:workout_logger/core/models/goal.dart';
+import 'package:fitrack_pro/core/models/goal.dart';
 
 class Routine {
   final String id;

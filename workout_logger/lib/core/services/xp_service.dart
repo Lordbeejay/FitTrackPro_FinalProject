@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:workout_logger/core/models/xp_progress.dart';
+import 'package:fitrack_pro/core/models/xp_progress.dart';
 
 class XPService with ChangeNotifier {
   final String username;

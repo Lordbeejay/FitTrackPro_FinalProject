@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:workout_logger/core/services/auth_service.dart';
-import 'package:workout_logger/features/auth/login/login_page.dart';
+import 'package:fitrack_pro/core/services/auth_service.dart';
+import 'package:fitrack_pro/features/auth/login/login_page.dart';
 
 class SignupPage extends StatelessWidget {
   final AuthService authService;

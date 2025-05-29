@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
-import 'package:workout_logger/features/workout/planner/routine_model.dart';
-import 'package:workout_logger/core/models/goal.dart';
+import 'package:fitrack_pro/features/workout/planner/routine_model.dart';
+import 'package:fitrack_pro/core/models/goal.dart';
 
 class RoutineService with ChangeNotifier {
   final List<Routine> _routines = [];

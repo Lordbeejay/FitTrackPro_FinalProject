@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workout_logger/core/services/user_stats_service.dart';
+import 'package:fitrack_pro/core/services/user_stats_service.dart';
 
 class WorkoutCreateSheet extends StatefulWidget {
   final ScrollController scrollController;

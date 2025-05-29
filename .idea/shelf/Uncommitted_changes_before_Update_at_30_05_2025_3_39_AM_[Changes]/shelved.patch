@@ -1,0 +1,489 @@
+Index: .idea/caches/deviceStreaming.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DeviceStreaming\">\r\n    <option name=\"deviceSelectionList\">\r\n      <list>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"27\" />\r\n          <option name=\"brand\" value=\"DOCOMO\" />\r\n          <option name=\"codename\" value=\"F01L\" />\r\n          <option name=\"id\" value=\"F01L\" />\r\n          <option name=\"manufacturer\" value=\"FUJITSU\" />\r\n          <option name=\"name\" value=\"F-01L\" />\r\n          <option name=\"screenDensity\" value=\"360\" />\r\n          <option name=\"screenX\" value=\"720\" />\r\n          <option name=\"screenY\" value=\"1280\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"OnePlus\" />\r\n          <option name=\"codename\" value=\"OP5552L1\" />\r\n          <option name=\"id\" value=\"OP5552L1\" />\r\n          <option name=\"manufacturer\" value=\"OnePlus\" />\r\n          <option name=\"name\" value=\"CPH2415\" />\r\n          <option name=\"screenDensity\" value=\"480\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2412\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"OPPO\" />\r\n          <option name=\"codename\" value=\"OP573DL1\" />\r\n          <option name=\"id\" value=\"OP573DL1\" />\r\n          <option name=\"manufacturer\" value=\"OPPO\" />\r\n          <option name=\"name\" value=\"CPH2557\" />\r\n          <option name=\"screenDensity\" value=\"480\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"28\" />\r\n          <option name=\"brand\" value=\"DOCOMO\" />\r\n          <option name=\"codename\" value=\"SH-01L\" />\r\n          <option name=\"id\" value=\"SH-01L\" />\r\n          <option name=\"manufacturer\" value=\"SHARP\" />\r\n          <option name=\"name\" value=\"AQUOS sense2 SH-01L\" />\r\n          <option name=\"screenDensity\" value=\"480\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2160\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"Lenovo\" />\r\n          <option name=\"codename\" value=\"TB370FU\" />\r\n          <option name=\"id\" value=\"TB370FU\" />\r\n          <option name=\"manufacturer\" value=\"Lenovo\" />\r\n          <option name=\"name\" value=\"Tab P12\" />\r\n          <option name=\"screenDensity\" value=\"340\" />\r\n          <option name=\"screenX\" value=\"1840\" />\r\n          <option name=\"screenY\" value=\"2944\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"a15\" />\r\n          <option name=\"id\" value=\"a15\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"A15\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"a16x\" />\r\n          <option name=\"id\" value=\"a16x\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"A16 5G\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"a35x\" />\r\n          <option name=\"id\" value=\"a35x\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"A35\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"31\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"a51\" />\r\n          <option name=\"id\" value=\"a51\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy A51\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"akita\" />\r\n          <option name=\"id\" value=\"akita\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 8a\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"motorola\" />\r\n          <option name=\"codename\" value=\"arcfox\" />\r\n          <option name=\"id\" value=\"arcfox\" />\r\n          <option name=\"manufacturer\" value=\"Motorola\" />\r\n          <option name=\"name\" value=\"razr plus 2024\" />\r\n          <option name=\"screenDensity\" value=\"360\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"1272\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"motorola\" />\r\n          <option name=\"codename\" value=\"austin\" />\r\n          <option name=\"id\" value=\"austin\" />\r\n          <option name=\"manufacturer\" value=\"Motorola\" />\r\n          <option name=\"name\" value=\"moto g 5G (2022)\" />\r\n          <option name=\"screenDensity\" value=\"280\" />\r\n          <option name=\"screenX\" value=\"720\" />\r\n          <option name=\"screenY\" value=\"1600\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"b0q\" />\r\n          <option name=\"id\" value=\"b0q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S22 Ultra\" />\r\n          <option name=\"screenDensity\" value=\"600\" />\r\n          <option name=\"screenX\" value=\"1440\" />\r\n          <option name=\"screenY\" value=\"3088\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"32\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"bluejay\" />\r\n          <option name=\"id\" value=\"bluejay\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 6a\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"caiman\" />\r\n          <option name=\"id\" value=\"caiman\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 9 Pro\" />\r\n          <option name=\"screenDensity\" value=\"360\" />\r\n          <option name=\"screenX\" value=\"960\" />\r\n          <option name=\"screenY\" value=\"2142\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"comet\" />\r\n          <option name=\"id\" value=\"comet\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 9 Pro Fold\" />\r\n          <option name=\"screenDensity\" value=\"390\" />\r\n          <option name=\"screenX\" value=\"2076\" />\r\n          <option name=\"screenY\" value=\"2152\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"29\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"crownqlteue\" />\r\n          <option name=\"id\" value=\"crownqlteue\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Note9\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"2220\" />\r\n          <option name=\"screenY\" value=\"1080\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"dm2q\" />\r\n          <option name=\"id\" value=\"dm2q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"S23 Plus\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"dm3q\" />\r\n          <option name=\"id\" value=\"dm3q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S23 Ultra\" />\r\n          <option name=\"screenDensity\" value=\"600\" />\r\n          <option name=\"screenX\" value=\"1440\" />\r\n          <option name=\"screenY\" value=\"3088\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"e1q\" />\r\n          <option name=\"id\" value=\"e1q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S24\" />\r\n          <option name=\"screenDensity\" value=\"480\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"e3q\" />\r\n          <option name=\"id\" value=\"e3q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S24 Ultra\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1440\" />\r\n          <option name=\"screenY\" value=\"3120\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"eos\" />\r\n          <option name=\"id\" value=\"eos\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Eos\" />\r\n          <option name=\"screenDensity\" value=\"320\" />\r\n          <option name=\"screenX\" value=\"384\" />\r\n          <option name=\"screenY\" value=\"384\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"felix\" />\r\n          <option name=\"id\" value=\"felix\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel Fold\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"2208\" />\r\n          <option name=\"screenY\" value=\"1840\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"felix\" />\r\n          <option name=\"id\" value=\"felix\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel Fold\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"2208\" />\r\n          <option name=\"screenY\" value=\"1840\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"felix_camera\" />\r\n          <option name=\"id\" value=\"felix_camera\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel Fold (Camera-enabled)\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"2208\" />\r\n          <option name=\"screenY\" value=\"1840\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"motorola\" />\r\n          <option name=\"codename\" value=\"fogona\" />\r\n          <option name=\"id\" value=\"fogona\" />\r\n          <option name=\"manufacturer\" value=\"Motorola\" />\r\n          <option name=\"name\" value=\"moto g play - 2024\" />\r\n          <option name=\"screenDensity\" value=\"280\" />\r\n          <option name=\"screenX\" value=\"720\" />\r\n          <option name=\"screenY\" value=\"1600\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"g0q\" />\r\n          <option name=\"id\" value=\"g0q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"SM-S906U1\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"gta9pwifi\" />\r\n          <option name=\"id\" value=\"gta9pwifi\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"SM-X210\" />\r\n          <option name=\"screenDensity\" value=\"240\" />\r\n          <option name=\"screenX\" value=\"1200\" />\r\n          <option name=\"screenY\" value=\"1920\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"gts7xllite\" />\r\n          <option name=\"id\" value=\"gts7xllite\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"SM-T738U\" />\r\n          <option name=\"screenDensity\" value=\"340\" />\r\n          <option name=\"screenX\" value=\"1600\" />\r\n          <option name=\"screenY\" value=\"2560\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"gts8uwifi\" />\r\n          <option name=\"id\" value=\"gts8uwifi\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Tab S8 Ultra\" />\r\n          <option name=\"screenDensity\" value=\"320\" />\r\n          <option name=\"screenX\" value=\"1848\" />\r\n          <option name=\"screenY\" value=\"2960\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"gts8wifi\" />\r\n          <option name=\"id\" value=\"gts8wifi\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Tab S8\" />\r\n          <option name=\"screenDensity\" value=\"274\" />\r\n          <option name=\"screenX\" value=\"1600\" />\r\n          <option name=\"screenY\" value=\"2560\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"gts9fe\" />\r\n          <option name=\"id\" value=\"gts9fe\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Tab S9 FE 5G\" />\r\n          <option name=\"screenDensity\" value=\"280\" />\r\n          <option name=\"screenX\" value=\"1440\" />\r\n          <option name=\"screenY\" value=\"2304\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"husky\" />\r\n          <option name=\"id\" value=\"husky\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 8 Pro\" />\r\n          <option name=\"screenDensity\" value=\"390\" />\r\n          <option name=\"screenX\" value=\"1008\" />\r\n          <option name=\"screenY\" value=\"2244\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"30\" />\r\n          <option name=\"brand\" value=\"motorola\" />\r\n          <option name=\"codename\" value=\"java\" />\r\n          <option name=\"id\" value=\"java\" />\r\n          <option name=\"manufacturer\" value=\"Motorola\" />\r\n          <option name=\"name\" value=\"G20\" />\r\n          <option name=\"screenDensity\" value=\"280\" />\r\n          <option name=\"screenX\" value=\"720\" />\r\n          <option name=\"screenY\" value=\"1600\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"komodo\" />\r\n          <option name=\"id\" value=\"komodo\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 9 Pro XL\" />\r\n          <option name=\"screenDensity\" value=\"360\" />\r\n          <option name=\"screenX\" value=\"1008\" />\r\n          <option name=\"screenY\" value=\"2244\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"lynx\" />\r\n          <option name=\"id\" value=\"lynx\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 7a\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"motorola\" />\r\n          <option name=\"codename\" value=\"maui\" />\r\n          <option name=\"id\" value=\"maui\" />\r\n          <option name=\"manufacturer\" value=\"Motorola\" />\r\n          <option name=\"name\" value=\"moto g play - 2023\" />\r\n          <option name=\"screenDensity\" value=\"280\" />\r\n          <option name=\"screenX\" value=\"720\" />\r\n          <option name=\"screenY\" value=\"1600\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"o1q\" />\r\n          <option name=\"id\" value=\"o1q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S21\" />\r\n          <option name=\"screenDensity\" value=\"421\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"31\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"oriole\" />\r\n          <option name=\"id\" value=\"oriole\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 6\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"panther\" />\r\n          <option name=\"id\" value=\"panther\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 7\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"q5q\" />\r\n          <option name=\"id\" value=\"q5q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Z Fold5\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1812\" />\r\n          <option name=\"screenY\" value=\"2176\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"q6q\" />\r\n          <option name=\"id\" value=\"q6q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy Z Fold6\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1856\" />\r\n          <option name=\"screenY\" value=\"2160\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"30\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"r11\" />\r\n          <option name=\"id\" value=\"r11\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel Watch\" />\r\n          <option name=\"screenDensity\" value=\"320\" />\r\n          <option name=\"screenX\" value=\"384\" />\r\n          <option name=\"screenY\" value=\"384\" />\r\n          <option name=\"type\" value=\"WEAR_OS\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"r11q\" />\r\n          <option name=\"id\" value=\"r11q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"SM-S711U\" />\r\n          <option name=\"screenDensity\" value=\"450\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"30\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"redfin\" />\r\n          <option name=\"id\" value=\"redfin\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 5\" />\r\n          <option name=\"screenDensity\" value=\"440\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2340\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"shiba\" />\r\n          <option name=\"id\" value=\"shiba\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 8\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"samsung\" />\r\n          <option name=\"codename\" value=\"t2q\" />\r\n          <option name=\"id\" value=\"t2q\" />\r\n          <option name=\"manufacturer\" value=\"Samsung\" />\r\n          <option name=\"name\" value=\"Galaxy S21 Plus\" />\r\n          <option name=\"screenDensity\" value=\"394\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2400\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"33\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"tangorpro\" />\r\n          <option name=\"id\" value=\"tangorpro\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel Tablet\" />\r\n          <option name=\"screenDensity\" value=\"320\" />\r\n          <option name=\"screenX\" value=\"1600\" />\r\n          <option name=\"screenY\" value=\"2560\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"34\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"tokay\" />\r\n          <option name=\"id\" value=\"tokay\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 9\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2424\" />\r\n        </PersistentDeviceSelectionData>\r\n        <PersistentDeviceSelectionData>\r\n          <option name=\"api\" value=\"35\" />\r\n          <option name=\"brand\" value=\"google\" />\r\n          <option name=\"codename\" value=\"tokay\" />\r\n          <option name=\"id\" value=\"tokay\" />\r\n          <option name=\"manufacturer\" value=\"Google\" />\r\n          <option name=\"name\" value=\"Pixel 9\" />\r\n          <option name=\"screenDensity\" value=\"420\" />\r\n          <option name=\"screenX\" value=\"1080\" />\r\n          <option name=\"screenY\" value=\"2424\" />\r\n        </PersistentDeviceSelectionData>\r\n      </list>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/caches/deviceStreaming.xml b/.idea/caches/deviceStreaming.xml
+--- a/.idea/caches/deviceStreaming.xml	(revision 6aacc8c381448fc204283994af943858f81358ca)
++++ b/.idea/caches/deviceStreaming.xml	(date 1748542479656)
+@@ -17,6 +17,17 @@
+         <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
+           <option name="brand" value="OnePlus" />
++          <option name="codename" value="OP535DL1" />
++          <option name="id" value="OP535DL1" />
++          <option name="manufacturer" value="OnePlus" />
++          <option name="name" value="CPH2409" />
++          <option name="screenDensity" value="401" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2412" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="OnePlus" />
+           <option name="codename" value="OP5552L1" />
+           <option name="id" value="OP5552L1" />
+           <option name="manufacturer" value="OnePlus" />
+@@ -46,17 +57,6 @@
+           <option name="screenDensity" value="480" />
+           <option name="screenX" value="1080" />
+           <option name="screenY" value="2160" />
+-        </PersistentDeviceSelectionData>
+-        <PersistentDeviceSelectionData>
+-          <option name="api" value="34" />
+-          <option name="brand" value="Lenovo" />
+-          <option name="codename" value="TB370FU" />
+-          <option name="id" value="TB370FU" />
+-          <option name="manufacturer" value="Lenovo" />
+-          <option name="name" value="Tab P12" />
+-          <option name="screenDensity" value="340" />
+-          <option name="screenX" value="1840" />
+-          <option name="screenY" value="2944" />
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
+@@ -72,6 +72,17 @@
+         <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
+           <option name="brand" value="samsung" />
++          <option name="codename" value="a15x" />
++          <option name="id" value="a15x" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="A15 5G" />
++          <option name="screenDensity" value="450" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2340" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
+           <option name="codename" value="a16x" />
+           <option name="id" value="a16x" />
+           <option name="manufacturer" value="Samsung" />
+@@ -147,6 +158,17 @@
+           <option name="screenY" value="3088" />
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="b6q" />
++          <option name="id" value="b6q" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="Flip 6" />
++          <option name="screenDensity" value="340" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2640" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
+           <option name="api" value="32" />
+           <option name="brand" value="google" />
+           <option name="codename" value="bluejay" />
+@@ -170,6 +192,17 @@
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
++          <option name="brand" value="google" />
++          <option name="codename" value="comet" />
++          <option name="id" value="comet" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9 Pro Fold" />
++          <option name="screenDensity" value="390" />
++          <option name="screenX" value="2076" />
++          <option name="screenY" value="2152" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="35" />
+           <option name="brand" value="google" />
+           <option name="codename" value="comet" />
+           <option name="id" value="comet" />
+@@ -354,6 +387,17 @@
+           <option name="screenDensity" value="280" />
+           <option name="screenX" value="1440" />
+           <option name="screenY" value="2304" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="gts9wifi" />
++          <option name="id" value="gts9wifi" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="SM-X710" />
++          <option name="screenDensity" value="340" />
++          <option name="screenX" value="1600" />
++          <option name="screenY" value="2560" />
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
+@@ -389,6 +433,17 @@
+           <option name="screenY" value="2244" />
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
++          <option name="api" value="35" />
++          <option name="brand" value="google" />
++          <option name="codename" value="komodo" />
++          <option name="id" value="komodo" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9 Pro XL" />
++          <option name="screenDensity" value="360" />
++          <option name="screenX" value="1008" />
++          <option name="screenY" value="2244" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
+           <option name="api" value="33" />
+           <option name="brand" value="google" />
+           <option name="codename" value="lynx" />
+@@ -533,6 +588,17 @@
+           <option name="screenY" value="2560" />
+         </PersistentDeviceSelectionData>
+         <PersistentDeviceSelectionData>
++          <option name="api" value="35" />
++          <option name="brand" value="google" />
++          <option name="codename" value="tegu" />
++          <option name="id" value="tegu" />
++          <option name="manufacturer" value="Google" />
++          <option name="name" value="Pixel 9a" />
++          <option name="screenDensity" value="420" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2424" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
+           <option name="api" value="34" />
+           <option name="brand" value="google" />
+           <option name="codename" value="tokay" />
+@@ -553,6 +619,17 @@
+           <option name="screenDensity" value="420" />
+           <option name="screenX" value="1080" />
+           <option name="screenY" value="2424" />
++        </PersistentDeviceSelectionData>
++        <PersistentDeviceSelectionData>
++          <option name="api" value="34" />
++          <option name="brand" value="samsung" />
++          <option name="codename" value="xcover7" />
++          <option name="id" value="xcover7" />
++          <option name="manufacturer" value="Samsung" />
++          <option name="name" value="SM-G556B" />
++          <option name="screenDensity" value="450" />
++          <option name="screenX" value="1080" />
++          <option name="screenY" value="2408" />
+         </PersistentDeviceSelectionData>
+       </list>
+     </option>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"NONE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0bb60c82-7835-4a1d-947d-e56ebe3aeb8b\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_details.dart\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_stat_card.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/caches/deviceStreaming.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/caches/deviceStreaming.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/json/users.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/json/users.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/lib/main.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/lib/main.dart\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/pubspec.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/pubspec.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/workout_logger/pubspec.yaml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/workout_logger/pubspec.yaml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ClangdSettings\">\r\n    <option name=\"formatViaClangd\" value=\"false\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Dart File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;herbert-cane&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Lordbeejay/CMSC_156_Midterms.git&quot;,\r\n    &quot;accountId&quot;: &quot;40ea0225-7368-4bfe-88f5-01bc60426061&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2w7mDHme5ZMDeDOOcU0PAUJwnt5\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"Dart Command Line App.widget_test.dart.executor\": \"Run\",\r\n    \"Flutter.main.dart.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\r\n    \"RunOnceActivity.readMode.enableVisualFormatting\": \"true\",\r\n    \"cf.first.check.clang-format\": \"false\",\r\n    \"cidr.known.project.marker\": \"true\",\r\n    \"com.google.services.firebase.aqiPopupShown\": \"true\",\r\n    \"dart.analysis.tool.window.visible\": \"false\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"io.flutter.reload.alreadyRun\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/Coding/CMSC156_FitTrackPro\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"device.explorer\",\r\n    \"show.migrate.to.gradle.popup\": \"false\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Coding\\CMSC_156_Midterms\\workout_logger\\lib\\features\\workout\\homepage\" />\r\n      <recent name=\"D:\\Coding\\CMSC_156_Midterms\\workout_logger\\lib\\core\\services\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Flutter.main.dart\">\r\n    <configuration name=\"widget_test.dart\" type=\"DartCommandLineRunConfigurationType\" factoryName=\"Dart Command Line Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/workout_logger/test/widget_test.dart\" />\r\n      <option name=\"workingDirectory\" value=\"$PROJECT_DIR$/workout_logger\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/workout_logger/lib/main.dart\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Flutter.main.dart\" />\r\n        <item itemvalue=\"Dart Command Line App.widget_test.dart\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0bb60c82-7835-4a1d-947d-e56ebe3aeb8b\" name=\"Changes\" comment=\"\" />\r\n      <created>1745400864600</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1745400864600</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6aacc8c381448fc204283994af943858f81358ca)
++++ b/.idea/workspace.xml	(date 1748542919609)
+@@ -5,28 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="0bb60c82-7835-4a1d-947d-e56ebe3aeb8b" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_details.dart" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_stat_card.dart" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/json/users.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/goal.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/models/user_stats.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/auth_service.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/user_stats_service.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/core/services/xp_service.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/login/login_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/auth/signup/signup_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/dashboard/dashboard_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/profile_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/editable_profile_header.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/profile/widgets/xp_progress_bar.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/goals/goals_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/homepage/workout_home_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/features/workout/planner/routine_planner_page.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/lib/main.dart" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/workout_logger/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/pubspec.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/workout_logger/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/workout_logger/pubspec.yaml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -72,30 +53,30 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "Dart Command Line App.widget_test.dart.executor": "Run",
+-    "Flutter.main.dart.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.cidr.known.project.marker": "true",
+-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+-    "cf.first.check.clang-format": "false",
+-    "cidr.known.project.marker": "true",
+-    "com.google.services.firebase.aqiPopupShown": "true",
+-    "dart.analysis.tool.window.visible": "false",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "io.flutter.reload.alreadyRun": "true",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "D:/Coding/CMSC156_FitTrackPro",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "device.explorer",
+-    "show.migrate.to.gradle.popup": "false"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;Dart Command Line App.widget_test.dart.executor&quot;: &quot;Run&quot;,
++    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
++    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
++    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
++    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/Coding/CMSC156_FitTrackPro&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;device.explorer&quot;,
++    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="D:\Coding\CMSC_156_Midterms\workout_logger\lib\features\workout\homepage" />
+Index: workout_logger/pubspec.lock
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Generated by pub\r\n# See https://dart.dev/tools/pub/glossary#lockfile\r\npackages:\r\n  args:\r\n    dependency: transitive\r\n    description:\r\n      name: args\r\n      sha256: d0481093c50b1da8910eb0bb301626d4d8eb7284aa739614d2b394ee09e3ea04\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.7.0\"\r\n  async:\r\n    dependency: transitive\r\n    description:\r\n      name: async\r\n      sha256: \"947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.11.0\"\r\n  boolean_selector:\r\n    dependency: transitive\r\n    description:\r\n      name: boolean_selector\r\n      sha256: \"6cfb5af12253eaf2b368f07bacc5a80d1301a071c73360d746b7f2e32d762c66\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.1\"\r\n  characters:\r\n    dependency: transitive\r\n    description:\r\n      name: characters\r\n      sha256: \"04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.3.0\"\r\n  clock:\r\n    dependency: transitive\r\n    description:\r\n      name: clock\r\n      sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.1.1\"\r\n  collection:\r\n    dependency: transitive\r\n    description:\r\n      name: collection\r\n      sha256: a1ace0a119f20aabc852d165077c036cd864315bd99b7eaa10a60100341941bf\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.19.0\"\r\n  cross_file:\r\n    dependency: transitive\r\n    description:\r\n      name: cross_file\r\n      sha256: \"7caf6a750a0c04effbb52a676dce9a4a592e10ad35c34d6d2d0e4811160d5670\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.3.4+2\"\r\n  crypto:\r\n    dependency: transitive\r\n    description:\r\n      name: crypto\r\n      sha256: \"1e445881f28f22d6140f181e07737b22f1e099a5e1ff94b0af2f9e4a463f4855\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"3.0.6\"\r\n  cupertino_icons:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: cupertino_icons\r\n      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.0.8\"\r\n  dbus:\r\n    dependency: transitive\r\n    description:\r\n      name: dbus\r\n      sha256: \"79e0c23480ff85dc68de79e2cd6334add97e48f7f4865d17686dd6ea81a47e8c\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.7.11\"\r\n  fake_async:\r\n    dependency: transitive\r\n    description:\r\n      name: fake_async\r\n      sha256: \"511392330127add0b769b75a987850d136345d9227c6b94c96a04cf4a391bf78\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.3.1\"\r\n  ffi:\r\n    dependency: transitive\r\n    description:\r\n      name: ffi\r\n      sha256: \"16ed7b077ef01ad6170a3d0c57caa4a112a38d7a2ed5602e0aca9ca6f3d98da6\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.3\"\r\n  file:\r\n    dependency: transitive\r\n    description:\r\n      name: file\r\n      sha256: a3b4f84adafef897088c160faf7dfffb7696046cb13ae90b508c2cbc95d3b8d4\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"7.0.1\"\r\n  file_selector_linux:\r\n    dependency: transitive\r\n    description:\r\n      name: file_selector_linux\r\n      sha256: \"54cbbd957e1156d29548c7d9b9ec0c0ebb6de0a90452198683a7d23aed617a33\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.9.3+2\"\r\n  file_selector_macos:\r\n    dependency: transitive\r\n    description:\r\n      name: file_selector_macos\r\n      sha256: \"271ab9986df0c135d45c3cdb6bd0faa5db6f4976d3e4b437cf7d0f258d941bfc\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.9.4+2\"\r\n  file_selector_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: file_selector_platform_interface\r\n      sha256: a3994c26f10378a039faa11de174d7b78eb8f79e4dd0af2a451410c1a5c3f66b\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.6.2\"\r\n  file_selector_windows:\r\n    dependency: transitive\r\n    description:\r\n      name: file_selector_windows\r\n      sha256: \"320fcfb6f33caa90f0b58380489fc5ac05d99ee94b61aa96ec2bff0ba81d3c2b\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.9.3+4\"\r\n  fixnum:\r\n    dependency: transitive\r\n    description:\r\n      name: fixnum\r\n      sha256: b6dc7065e46c974bc7c5f143080a6764ec7a4be6da1285ececdc37be96de53be\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.1.1\"\r\n  flutter:\r\n    dependency: \"direct main\"\r\n    description: flutter\r\n    source: sdk\r\n    version: \"0.0.0\"\r\n  flutter_lints:\r\n    dependency: \"direct dev\"\r\n    description:\r\n      name: flutter_lints\r\n      sha256: \"5398f14efa795ffb7a33e9b6a08798b26a180edac4ad7db3f231e40f82ce11e1\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"5.0.0\"\r\n  flutter_local_notifications:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: flutter_local_notifications\r\n      sha256: \"33b3e0269ae9d51669957a923f2376bee96299b09915d856395af8c4238aebfa\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"19.1.0\"\r\n  flutter_local_notifications_linux:\r\n    dependency: transitive\r\n    description:\r\n      name: flutter_local_notifications_linux\r\n      sha256: e3c277b2daab8e36ac5a6820536668d07e83851aeeb79c446e525a70710770a5\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"6.0.0\"\r\n  flutter_local_notifications_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: flutter_local_notifications_platform_interface\r\n      sha256: \"2569b973fc9d1f63a37410a9f7c1c552081226c597190cb359ef5d5762d1631c\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"9.0.0\"\r\n  flutter_local_notifications_windows:\r\n    dependency: transitive\r\n    description:\r\n      name: flutter_local_notifications_windows\r\n      sha256: f8fc0652a601f83419d623c85723a3e82ad81f92b33eaa9bcc21ea1b94773e6e\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.0.0\"\r\n  flutter_plugin_android_lifecycle:\r\n    dependency: transitive\r\n    description:\r\n      name: flutter_plugin_android_lifecycle\r\n      sha256: f948e346c12f8d5480d2825e03de228d0eb8c3a737e4cdaa122267b89c022b5e\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.0.28\"\r\n  flutter_test:\r\n    dependency: \"direct dev\"\r\n    description: flutter\r\n    source: sdk\r\n    version: \"0.0.0\"\r\n  flutter_web_plugins:\r\n    dependency: transitive\r\n    description: flutter\r\n    source: sdk\r\n    version: \"0.0.0\"\r\n  http:\r\n    dependency: transitive\r\n    description:\r\n      name: http\r\n      sha256: fe7ab022b76f3034adc518fb6ea04a82387620e19977665ea18d30a1cf43442f\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.3.0\"\r\n  http_parser:\r\n    dependency: transitive\r\n    description:\r\n      name: http_parser\r\n      sha256: \"178d74305e7866013777bab2c3d8726205dc5a4dd935297175b19a23a2e66571\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"4.1.2\"\r\n  image_picker:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: image_picker\r\n      sha256: \"021834d9c0c3de46bf0fe40341fa07168407f694d9b2bb18d532dc1261867f7a\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.1.2\"\r\n  image_picker_android:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_android\r\n      sha256: \"317a5d961cec5b34e777b9252393f2afbd23084aa6e60fcf601dcf6341b9ebeb\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.8.12+23\"\r\n  image_picker_for_web:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_for_web\r\n      sha256: \"717eb042ab08c40767684327be06a5d8dbb341fe791d514e4b92c7bbe1b7bb83\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"3.0.6\"\r\n  image_picker_ios:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_ios\r\n      sha256: \"05da758e67bc7839e886b3959848aa6b44ff123ab4b28f67891008afe8ef9100\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.8.12+2\"\r\n  image_picker_linux:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_linux\r\n      sha256: \"34a65f6740df08bbbeb0a1abd8e6d32107941fd4868f67a507b25601651022c9\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.2.1+2\"\r\n  image_picker_macos:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_macos\r\n      sha256: \"1b90ebbd9dcf98fb6c1d01427e49a55bd96b5d67b8c67cf955d60a5de74207c1\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.2.1+2\"\r\n  image_picker_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_platform_interface\r\n      sha256: \"886d57f0be73c4b140004e78b9f28a8914a09e50c2d816bdd0520051a71236a0\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.10.1\"\r\n  image_picker_windows:\r\n    dependency: transitive\r\n    description:\r\n      name: image_picker_windows\r\n      sha256: \"6ad07afc4eb1bc25f3a01084d28520496c4a3bb0cb13685435838167c9dcedeb\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.2.1+1\"\r\n  intl:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: intl\r\n      sha256: \"3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.18.1\"\r\n  leak_tracker:\r\n    dependency: transitive\r\n    description:\r\n      name: leak_tracker\r\n      sha256: \"7bb2830ebd849694d1ec25bf1f44582d6ac531a57a365a803a6034ff751d2d06\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"10.0.7\"\r\n  leak_tracker_flutter_testing:\r\n    dependency: transitive\r\n    description:\r\n      name: leak_tracker_flutter_testing\r\n      sha256: \"9491a714cca3667b60b5c420da8217e6de0d1ba7a5ec322fab01758f6998f379\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"3.0.8\"\r\n  leak_tracker_testing:\r\n    dependency: transitive\r\n    description:\r\n      name: leak_tracker_testing\r\n      sha256: \"6ba465d5d76e67ddf503e1161d1f4a6bc42306f9d66ca1e8f079a47290fb06d3\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"3.0.1\"\r\n  lints:\r\n    dependency: transitive\r\n    description:\r\n      name: lints\r\n      sha256: c35bb79562d980e9a453fc715854e1ed39e24e7d0297a880ef54e17f9874a9d7\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"5.1.1\"\r\n  matcher:\r\n    dependency: transitive\r\n    description:\r\n      name: matcher\r\n      sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.12.16+1\"\r\n  material_color_utilities:\r\n    dependency: transitive\r\n    description:\r\n      name: material_color_utilities\r\n      sha256: f7142bb1154231d7ea5f96bc7bde4bda2a0945d2806bb11670e30b850d56bdec\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.11.1\"\r\n  meta:\r\n    dependency: transitive\r\n    description:\r\n      name: meta\r\n      sha256: bdb68674043280c3428e9ec998512fb681678676b3c54e773629ffe74419f8c7\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.15.0\"\r\n  mime:\r\n    dependency: transitive\r\n    description:\r\n      name: mime\r\n      sha256: \"41a20518f0cb1256669420fdba0cd90d21561e560ac240f26ef8322e45bb7ed6\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.0.0\"\r\n  nested:\r\n    dependency: transitive\r\n    description:\r\n      name: nested\r\n      sha256: \"03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.0.0\"\r\n  path:\r\n    dependency: transitive\r\n    description:\r\n      name: path\r\n      sha256: \"087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.9.0\"\r\n  path_provider:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: path_provider\r\n      sha256: \"50c5dd5b6e1aaf6fb3a78b33f6aa3afca52bf903a8a5298f53101fdaee55bbcd\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.5\"\r\n  path_provider_android:\r\n    dependency: transitive\r\n    description:\r\n      name: path_provider_android\r\n      sha256: d0d310befe2c8ab9e7f393288ccbb11b60c019c6b5afc21973eeee4dda2b35e9\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.2.17\"\r\n  path_provider_foundation:\r\n    dependency: transitive\r\n    description:\r\n      name: path_provider_foundation\r\n      sha256: \"4843174df4d288f5e29185bd6e72a6fbdf5a4a4602717eed565497429f179942\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.1\"\r\n  path_provider_linux:\r\n    dependency: transitive\r\n    description:\r\n      name: path_provider_linux\r\n      sha256: f7a1fe3a634fe7734c8d3f2766ad746ae2a2884abe22e241a8b301bf5cac3279\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.2.1\"\r\n  path_provider_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: path_provider_platform_interface\r\n      sha256: \"88f5779f72ba699763fa3a3b06aa4bf6de76c8e5de842cf6f29e2e06476c2334\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.2\"\r\n  path_provider_windows:\r\n    dependency: transitive\r\n    description:\r\n      name: path_provider_windows\r\n      sha256: bd6f00dbd873bfb70d0761682da2b3a2c2fccc2b9e84c495821639601d81afe7\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.3.0\"\r\n  petitparser:\r\n    dependency: transitive\r\n    description:\r\n      name: petitparser\r\n      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"6.0.2\"\r\n  platform:\r\n    dependency: transitive\r\n    description:\r\n      name: platform\r\n      sha256: \"5d6b1b0036a5f331ebc77c850ebc8506cbc1e9416c27e59b439f917a902a4984\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"3.1.6\"\r\n  plugin_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: plugin_platform_interface\r\n      sha256: \"4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.8\"\r\n  provider:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: provider\r\n      sha256: \"4abbd070a04e9ddc287673bf5a030c7ca8b685ff70218720abab8b092f53dd84\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"6.1.5\"\r\n  shared_preferences:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: shared_preferences\r\n      sha256: \"6e8bf70b7fef813df4e9a36f658ac46d107db4b4cfe1048b477d4e453a8159f5\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.5.3\"\r\n  shared_preferences_android:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_android\r\n      sha256: \"20cbd561f743a342c76c151d6ddb93a9ce6005751e7aa458baad3858bfbfb6ac\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.10\"\r\n  shared_preferences_foundation:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_foundation\r\n      sha256: \"6a52cfcdaeac77cad8c97b539ff688ccfc458c007b4db12be584fbe5c0e49e03\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.5.4\"\r\n  shared_preferences_linux:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_linux\r\n      sha256: \"580abfd40f415611503cae30adf626e6656dfb2f0cee8f465ece7b6defb40f2f\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.1\"\r\n  shared_preferences_platform_interface:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_platform_interface\r\n      sha256: \"57cbf196c486bc2cf1f02b85784932c6094376284b3ad5779d1b1c6c6a816b80\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.1\"\r\n  shared_preferences_web:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_web\r\n      sha256: c49bd060261c9a3f0ff445892695d6212ff603ef3115edbb448509d407600019\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.3\"\r\n  shared_preferences_windows:\r\n    dependency: transitive\r\n    description:\r\n      name: shared_preferences_windows\r\n      sha256: \"94ef0f72b2d71bc3e700e025db3710911bd51a71cefb65cc609dd0d9a982e3c1\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.4.1\"\r\n  sky_engine:\r\n    dependency: transitive\r\n    description: flutter\r\n    source: sdk\r\n    version: \"0.0.0\"\r\n  source_span:\r\n    dependency: transitive\r\n    description:\r\n      name: source_span\r\n      sha256: \"53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.10.0\"\r\n  sprintf:\r\n    dependency: transitive\r\n    description:\r\n      name: sprintf\r\n      sha256: \"1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"7.0.0\"\r\n  stack_trace:\r\n    dependency: transitive\r\n    description:\r\n      name: stack_trace\r\n      sha256: \"9f47fd3630d76be3ab26f0ee06d213679aa425996925ff3feffdec504931c377\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.12.0\"\r\n  stream_channel:\r\n    dependency: transitive\r\n    description:\r\n      name: stream_channel\r\n      sha256: ba2aa5d8cc609d96bbb2899c28934f9e1af5cddbd60a827822ea467161eb54e7\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.2\"\r\n  string_scanner:\r\n    dependency: transitive\r\n    description:\r\n      name: string_scanner\r\n      sha256: \"688af5ed3402a4bde5b3a6c15fd768dbf2621a614950b17f04626c431ab3c4c3\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.3.0\"\r\n  term_glyph:\r\n    dependency: transitive\r\n    description:\r\n      name: term_glyph\r\n      sha256: a29248a84fbb7c79282b40b8c72a1209db169a2e0542bce341da992fe1bc7e84\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.2.1\"\r\n  test_api:\r\n    dependency: transitive\r\n    description:\r\n      name: test_api\r\n      sha256: \"664d3a9a64782fcdeb83ce9c6b39e78fd2971d4e37827b9b06c3aa1edc5e760c\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.7.3\"\r\n  timezone:\r\n    dependency: transitive\r\n    description:\r\n      name: timezone\r\n      sha256: dd14a3b83cfd7cb19e7888f1cbc20f258b8d71b54c06f79ac585f14093a287d1\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"0.10.1\"\r\n  typed_data:\r\n    dependency: transitive\r\n    description:\r\n      name: typed_data\r\n      sha256: f9049c039ebfeb4cf7a7104a675823cd72dba8297f264b6637062516699fa006\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.4.0\"\r\n  uuid:\r\n    dependency: \"direct main\"\r\n    description:\r\n      name: uuid\r\n      sha256: a5be9ef6618a7ac1e964353ef476418026db906c4facdedaa299b7a2e71690ff\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"4.5.1\"\r\n  vector_math:\r\n    dependency: transitive\r\n    description:\r\n      name: vector_math\r\n      sha256: \"80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"2.1.4\"\r\n  vm_service:\r\n    dependency: transitive\r\n    description:\r\n      name: vm_service\r\n      sha256: f6be3ed8bd01289b34d679c2b62226f63c0e69f9fd2e50a6b3c1c729a961041b\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"14.3.0\"\r\n  web:\r\n    dependency: transitive\r\n    description:\r\n      name: web\r\n      sha256: \"868d88a33d8a87b18ffc05f9f030ba328ffefba92d6c127917a2ba740f9cfe4a\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.1.1\"\r\n  xdg_directories:\r\n    dependency: transitive\r\n    description:\r\n      name: xdg_directories\r\n      sha256: \"7a3f37b05d989967cdddcbb571f1ea834867ae2faa29725fd085180e0883aa15\"\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"1.1.0\"\r\n  xml:\r\n    dependency: transitive\r\n    description:\r\n      name: xml\r\n      sha256: b015a8ad1c488f66851d762d3090a21c600e479dc75e68328c52774040cf9226\r\n      url: \"https://pub.dev\"\r\n    source: hosted\r\n    version: \"6.5.0\"\r\nsdks:\r\n  dart: \">=3.6.1 <4.0.0\"\r\n  flutter: \">=3.27.0\"\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/workout_logger/pubspec.lock b/workout_logger/pubspec.lock
+--- a/workout_logger/pubspec.lock	(revision 6aacc8c381448fc204283994af943858f81358ca)
++++ b/workout_logger/pubspec.lock	(date 1748390723464)
+@@ -13,42 +13,42 @@
+     dependency: transitive
+     description:
+       name: async
+-      sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
++      sha256: "758e6d74e971c3e5aceb4110bfd6698efc7f501675bcfe0c775459a8140750eb"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.11.0"
++    version: "2.13.0"
+   boolean_selector:
+     dependency: transitive
+     description:
+       name: boolean_selector
+-      sha256: "6cfb5af12253eaf2b368f07bacc5a80d1301a071c73360d746b7f2e32d762c66"
++      sha256: "8aab1771e1243a5063b8b0ff68042d67334e3feab9e95b9490f9a6ebf73b42ea"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.1.1"
++    version: "2.1.2"
+   characters:
+     dependency: transitive
+     description:
+       name: characters
+-      sha256: "04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605"
++      sha256: f71061c654a3380576a52b451dd5532377954cf9dbd272a78fc8479606670803
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.3.0"
++    version: "1.4.0"
+   clock:
+     dependency: transitive
+     description:
+       name: clock
+-      sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf
++      sha256: fddb70d9b5277016c77a80201021d40a2247104d9f4aa7bab7157b7e3f05b84b
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.1.1"
++    version: "1.1.2"
+   collection:
+     dependency: transitive
+     description:
+       name: collection
+-      sha256: a1ace0a119f20aabc852d165077c036cd864315bd99b7eaa10a60100341941bf
++      sha256: "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.19.0"
++    version: "1.19.1"
+   cross_file:
+     dependency: transitive
+     description:
+@@ -85,10 +85,10 @@
+     dependency: transitive
+     description:
+       name: fake_async
+-      sha256: "511392330127add0b769b75a987850d136345d9227c6b94c96a04cf4a391bf78"
++      sha256: "5368f224a74523e8d2e7399ea1638b37aecfca824a3cc4dfdf77bf1fa905ac44"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.3.1"
++    version: "1.3.3"
+   ffi:
+     dependency: transitive
+     description:
+@@ -300,18 +300,18 @@
+     dependency: transitive
+     description:
+       name: leak_tracker
+-      sha256: "7bb2830ebd849694d1ec25bf1f44582d6ac531a57a365a803a6034ff751d2d06"
++      sha256: "6bb818ecbdffe216e81182c2f0714a2e62b593f4a4f13098713ff1685dfb6ab0"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "10.0.7"
++    version: "10.0.9"
+   leak_tracker_flutter_testing:
+     dependency: transitive
+     description:
+       name: leak_tracker_flutter_testing
+-      sha256: "9491a714cca3667b60b5c420da8217e6de0d1ba7a5ec322fab01758f6998f379"
++      sha256: f8b613e7e6a13ec79cfdc0e97638fddb3ab848452eff057653abd3edba760573
+       url: "https://pub.dev"
+     source: hosted
+-    version: "3.0.8"
++    version: "3.0.9"
+   leak_tracker_testing:
+     dependency: transitive
+     description:
+@@ -332,10 +332,10 @@
+     dependency: transitive
+     description:
+       name: matcher
+-      sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb
++      sha256: dc58c723c3c24bf8d3e2d3ad3f2f9d7bd9cf43ec6feaa64181775e60190153f2
+       url: "https://pub.dev"
+     source: hosted
+-    version: "0.12.16+1"
++    version: "0.12.17"
+   material_color_utilities:
+     dependency: transitive
+     description:
+@@ -348,10 +348,10 @@
+     dependency: transitive
+     description:
+       name: meta
+-      sha256: bdb68674043280c3428e9ec998512fb681678676b3c54e773629ffe74419f8c7
++      sha256: e3641ec5d63ebf0d9b41bd43201a66e3fc79a65db5f61fc181f04cd27aab950c
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.15.0"
++    version: "1.16.0"
+   mime:
+     dependency: transitive
+     description:
+@@ -372,10 +372,10 @@
+     dependency: transitive
+     description:
+       name: path
+-      sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
++      sha256: "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.9.0"
++    version: "1.9.1"
+   path_provider:
+     dependency: "direct main"
+     description:
+@@ -521,10 +521,10 @@
+     dependency: transitive
+     description:
+       name: source_span
+-      sha256: "53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c"
++      sha256: "254ee5351d6cb365c859e20ee823c3bb479bf4a293c22d17a9f1bf144ce86f7c"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.10.0"
++    version: "1.10.1"
+   sprintf:
+     dependency: transitive
+     description:
+@@ -537,42 +537,42 @@
+     dependency: transitive
+     description:
+       name: stack_trace
+-      sha256: "9f47fd3630d76be3ab26f0ee06d213679aa425996925ff3feffdec504931c377"
++      sha256: "8b27215b45d22309b5cddda1aa2b19bdfec9df0e765f2de506401c071d38d1b1"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.12.0"
++    version: "1.12.1"
+   stream_channel:
+     dependency: transitive
+     description:
+       name: stream_channel
+-      sha256: ba2aa5d8cc609d96bbb2899c28934f9e1af5cddbd60a827822ea467161eb54e7
++      sha256: "969e04c80b8bcdf826f8f16579c7b14d780458bd97f56d107d3950fdbeef059d"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "2.1.2"
++    version: "2.1.4"
+   string_scanner:
+     dependency: transitive
+     description:
+       name: string_scanner
+-      sha256: "688af5ed3402a4bde5b3a6c15fd768dbf2621a614950b17f04626c431ab3c4c3"
++      sha256: "921cd31725b72fe181906c6a94d987c78e3b98c2e205b397ea399d4054872b43"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.3.0"
++    version: "1.4.1"
+   term_glyph:
+     dependency: transitive
+     description:
+       name: term_glyph
+-      sha256: a29248a84fbb7c79282b40b8c72a1209db169a2e0542bce341da992fe1bc7e84
++      sha256: "7f554798625ea768a7518313e58f83891c7f5024f88e46e7182a4558850a4b8e"
+       url: "https://pub.dev"
+     source: hosted
+-    version: "1.2.1"
++    version: "1.2.2"
+   test_api:
+     dependency: transitive
+     description:
+       name: test_api
+-      sha256: "664d3a9a64782fcdeb83ce9c6b39e78fd2971d4e37827b9b06c3aa1edc5e760c"
++      sha256: fb31f383e2ee25fbbfe06b40fe21e1e458d14080e3c67e7ba0acfde4df4e0bbd
+       url: "https://pub.dev"
+     source: hosted
+-    version: "0.7.3"
++    version: "0.7.4"
+   timezone:
+     dependency: transitive
+     description:
+@@ -609,10 +609,10 @@
+     dependency: transitive
+     description:
+       name: vm_service
+-      sha256: f6be3ed8bd01289b34d679c2b62226f63c0e69f9fd2e50a6b3c1c729a961041b
++      sha256: ddfa8d30d89985b96407efce8acbdd124701f96741f2d981ca860662f1c0dc02
+       url: "https://pub.dev"
+     source: hosted
+-    version: "14.3.0"
++    version: "15.0.0"
+   web:
+     dependency: transitive
+     description:
+@@ -638,5 +638,5 @@
+     source: hosted
+     version: "6.5.0"
+ sdks:
+-  dart: ">=3.6.1 <4.0.0"
++  dart: ">=3.7.0-0 <4.0.0"
+   flutter: ">=3.27.0"

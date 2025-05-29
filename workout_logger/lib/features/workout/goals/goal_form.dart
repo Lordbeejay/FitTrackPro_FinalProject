@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_logger/core/services/goal_service.dart';
-import 'package:workout_logger/core/models/goal.dart';
+import 'package:fitrack_pro/core/services/goal_service.dart';
+import 'package:fitrack_pro/core/models/goal.dart';
 
 class GoalForm extends StatefulWidget {
   final Goal? goal; // If null → creating new, else → editing

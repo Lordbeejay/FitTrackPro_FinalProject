@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workout_logger/core/models/user_stats.dart';
+import 'package:fitrack_pro/core/models/user_stats.dart';
 
 class EditableProfileDetails extends StatefulWidget {
   final UserStats stats;

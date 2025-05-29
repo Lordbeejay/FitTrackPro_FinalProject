@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:workout_logger/core/models/mini_challenge.dart';
-import 'package:workout_logger/core/services/mini_challenge_service.dart';
-import 'package:workout_logger/core/services/xp_service.dart';
+import 'package:fitrack_pro/core/models/mini_challenge.dart';
+import 'package:fitrack_pro/core/services/mini_challenge_service.dart';
+import 'package:fitrack_pro/core/services/xp_service.dart';
 
 class MiniChallengeScreen extends StatefulWidget {
   final MiniChallenge challenge;

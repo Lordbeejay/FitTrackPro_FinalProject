@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:workout_logger/features/workout/homepage/workout_home_page.dart';
-import 'package:workout_logger/features/workout/goals/goals_page.dart';
-import 'package:workout_logger/features/workout/planner/routine_planner_page.dart';
-import 'package:workout_logger/features/profile/profile_page.dart';
-import 'package:workout_logger/features/auth/login/login_page.dart';
-import 'package:workout_logger/core/services/auth_service.dart';
-import 'package:workout_logger/core/services/xp_service.dart';
-import 'package:workout_logger/features/workout/roulette/workout_roulette_page.dart';
+import 'package:fitrack_pro/features/workout/homepage/workout_home_page.dart';
+import 'package:fitrack_pro/features/workout/goals/goals_page.dart';
+import 'package:fitrack_pro/features/workout/planner/routine_planner_page.dart';
+import 'package:fitrack_pro/features/profile/profile_page.dart';
+import 'package:fitrack_pro/features/auth/login/login_page.dart';
+import 'package:fitrack_pro/core/services/auth_service.dart';
+import 'package:fitrack_pro/core/services/xp_service.dart';
+import 'package:fitrack_pro/features/workout/roulette/workout_roulette_page.dart';
 
 class DashboardPage extends StatefulWidget {
   final String username;

@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:workout_logger/core/services/user_stats_service.dart';
-import 'package:workout_logger/core/services/xp_service.dart';
+import 'package:fitrack_pro/core/services/user_stats_service.dart';
+import 'package:fitrack_pro/core/services/xp_service.dart';
 
 class WorkoutService {
   final String username;
