@@ -38,6 +38,8 @@ class RoutineService with ChangeNotifier {
       List<String> exercises,
       int durationInMinutes,
       Goal associatedGoal,
+      DateTime scheduledDate,
+      String difficulty,
       ) {
     final routine = Routine(
       id: const Uuid().v4(),
@@ -48,6 +50,8 @@ class RoutineService with ChangeNotifier {
       associatedGoal: associatedGoal,
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
+      scheduledDate: scheduledDate,
+      difficulty: difficulty,
     );
     _routines.add(routine);
     _saveRoutines();
