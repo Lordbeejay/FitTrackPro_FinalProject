@@ -7,6 +7,7 @@ import 'package:workout_logger/features/dashboard/dashboard_page.dart';
 import 'package:workout_logger/features/workout/planner/routine_service.dart';
 import 'package:workout_logger/features/auth/login/login_page.dart';
 import 'package:workout_logger/features/workout/timer/notification_helper.dart';
+import 'package:workout_logger/features/splash/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +16,15 @@ void main() async {
   runApp(const WorkoutApp());
 }
 
-class WorkoutApp extends StatelessWidget {
+class WorkoutApp extends StatefulWidget {
   const WorkoutApp({super.key});
+
+  @override
+  State<WorkoutApp> createState() => _WorkoutAppState();
+}
+
+class _WorkoutAppState extends State<WorkoutApp> {
+  bool _showSplash = true;
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +39,28 @@ class WorkoutApp extends StatelessWidget {
         builder: (context, authService, _) {
           final username = authService.currentUser;
 
+          if (_showSplash) {
+            return MaterialApp(
+              home: SplashScreen(
+                onGetStarted: () {
+                  setState(() {
+                    _showSplash = false;
+                  });
+                },
+              ),
+            );
+          }
+
           return MaterialApp(
             title: 'FitTrack Pro',
             theme: ThemeData(primarySwatch: Colors.blue),
             home: username == null
                 ? LoginPage(authService: authService)
                 : DashboardPage(
-              username: username,
-              authService: authService,
-              xpService: Provider.of<XPService>(context, listen: false),
-            ),
+                    username: username,
+                    authService: authService,
+                    xpService: Provider.of<XPService>(context, listen: false),
+                  ),
           );
         },
       ),
