@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  connectivity_plus: ^5.0.2  # or latest
   firebase_core: ^2.18.0 # or latest
   cloud_firestore: ^4.10.0 # or latest
   shared_preferences: ^2.2.2
