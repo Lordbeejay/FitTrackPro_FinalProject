@@ -6,10 +6,10 @@ enum MiniChallengeStatus { notStarted, inProgress, completed }
 
 class MiniChallengeService {
   final List<MiniChallenge> _challenges = [
-    MiniChallenge(description: "Do 50 push ups today", xpReward: 50),
-    MiniChallenge(description: "Do 30 sit ups today", xpReward: 30),
+    MiniChallenge(description: "Do 40 push ups today", xpReward: 50),
+    MiniChallenge(description: "Do 50 sit ups today", xpReward: 30),
     MiniChallenge(description: "Run for 10 minutes", xpReward: 40),
-    MiniChallenge(description: "Hold a plank for 2 minutes", xpReward: 25),
+    MiniChallenge(description: "Hold a plank for 3 minutes", xpReward: 25),
     MiniChallenge(description: "Do 20 burpees", xpReward: 35),
     MiniChallenge(description: "Do 100 jumping jacks", xpReward: 30),
     MiniChallenge(description: "Do 15 pull-ups", xpReward: 45),
@@ -22,9 +22,9 @@ class MiniChallengeService {
     MiniChallenge(description: "Complete a 10-minute yoga flow", xpReward: 30),
     MiniChallenge(description: "Do 40 lunges (20 each leg)", xpReward: 35),
     MiniChallenge(description: "Do 3 sets of 15 bicycle crunches", xpReward: 30),
-    MiniChallenge(description: "Do 20 push-ups and 20 squats", xpReward: 40),
+    MiniChallenge(description: "Do 25 push ups", xpReward: 15),
     MiniChallenge(description: "Take a brisk 20-minute walk", xpReward: 30),
-    MiniChallenge(description: "Do 10 burpees, 10 push-ups, and 10 sit-ups", xpReward: 50),
+    MiniChallenge(description: "Do 30 burpees", xpReward: 40),
   ];
 
   Future<MiniChallenge> getTodayChallenge() async {
