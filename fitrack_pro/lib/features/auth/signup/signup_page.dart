@@ -14,9 +14,9 @@ class SignupPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+            colors: [Color(0xFFB299E5), Color(0xFF9DCEFF)], // purple left, blue right
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
           ),
         ),
         child: Padding(
@@ -25,20 +25,27 @@ class SignupPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const CircleAvatar(
-                    radius: 60,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.fitness_center, size: 60, color: Color(0xFF2575FC)),
+                  Image.asset(
+                    'assets/images/ftp-logo-white.png',
+                    width: 180,
+                    height: 180,
                   ),
                   const SizedBox(height: 30),
                   const Text(
                     'Create Account',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      letterSpacing: 1.1,
+                    ),
                   ),
                   const SizedBox(height: 30),
                   Card(
                     elevation: 8,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: SignupForm(authService: authService),
@@ -54,7 +61,14 @@ class SignupPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Already have an account? Login', style: TextStyle(color: Colors.white)),
+                    child: const Text(
+                      'Already have an account? Login',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -204,10 +218,16 @@ class _SignupFormState extends State<SignupForm> {
               DropdownMenuItem(value: 'Female', child: Text('Female')),
               DropdownMenuItem(value: 'Prefer not to say', child: Text('Prefer not to say')),
             ],
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Gender',
-              border: OutlineInputBorder(),
-              prefixIcon: Icon(Icons.transgender),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF7F53AC), width: 2),
+              ),
+              prefixIcon: const Icon(Icons.transgender, color: Color(0xFF7F53AC)),
             ),
             onChanged: (value) {
               setState(() {
@@ -219,10 +239,16 @@ class _SignupFormState extends State<SignupForm> {
           GestureDetector(
             onTap: () => _selectDate(context),
             child: InputDecorator(
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Date of Birth',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.cake),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(14),
+                  borderSide: const BorderSide(color: Color(0xFF7F53AC), width: 2),
+                ),
+                prefixIcon: const Icon(Icons.cake, color: Color(0xFF7F53AC)),
               ),
               child: Text(dateText),
             ),
@@ -234,19 +260,57 @@ class _SignupFormState extends State<SignupForm> {
           const SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _isLoading ? null : _signup,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            child: GestureDetector(
+              onTap: _isLoading ? null : _signup,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: _isLoading ? 0.7 : 1.0,
+                child: Container(
+                  height: 56,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF9DCEFF), Color(0xFFB299E5)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.08),
+                        blurRadius: 12,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: _isLoading
+                        ? const SizedBox(
+                            height: 24,
+                            width: 24,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 2.5,
+                            ),
+                          )
+                        : Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.person_add_alt_1_rounded, color: Colors.white, size: 24),
+                              const SizedBox(width: 10),
+                              const Text(
+                                'Sign Up',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  letterSpacing: 1.1,
+                                ),
+                              ),
+                            ],
+                          ),
+                  ),
+                ),
               ),
-              child: _isLoading
-                  ? const SizedBox(
-                height: 20,
-                width: 20,
-                child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
-              )
-                  : const Text('Sign Up', style: TextStyle(fontSize: 16)),
             ),
           ),
         ],
@@ -260,8 +324,14 @@ class _SignupFormState extends State<SignupForm> {
       obscureText: obscure,
       decoration: InputDecoration(
         labelText: label,
-        border: const OutlineInputBorder(),
-        prefixIcon: Icon(icon),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14),
+          borderSide: const BorderSide(color: Color(0xFF7F53AC), width: 2),
+        ),
+        prefixIcon: Icon(icon, color: const Color(0xFF7F53AC)),
       ),
       validator: (value) => (value == null || value.isEmpty) ? 'Please enter $label' : null,
     );
