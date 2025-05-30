@@ -4,8 +4,6 @@ import 'package:fitrack_pro/core/models/user_stats.dart';
 import 'package:fitrack_pro/core/services/user_stats_service.dart';
 import 'package:fitrack_pro/core/services/xp_service.dart';
 import 'package:fitrack_pro/features/profile/widgets/editable_profile_header.dart';
-import 'package:fitrack_pro/features/profile/widgets/stat_card.dart';
-import 'package:fitrack_pro/features/profile/widgets/editable_stat_card.dart';
 import 'package:fitrack_pro/features/profile/widgets/xp_progress_bar.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -94,7 +92,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
             final stats = snapshot.data!;
             return SingleChildScrollView(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -105,35 +103,16 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   const SizedBox(height: 30),
 
-                  XPProgressBar(
-                    currentXP: _xpService.progress.currentXP,
-                    level: _xpService.progress.level,
-                    showTooltip: true,
-                  ),
-                  const SizedBox(height: 30),
+                  _buildXPProgressBar(_xpService.progress.level, _xpService.progress.currentXP),
+
+                  const SizedBox(height: 50),
 
                   _buildSectionTitle('Workout Summary'),
-                  _buildStatsGrid(stats),
+                  _buildStatsDisplay(stats),
 
                   const SizedBox(height: 20),
                   _buildSectionTitle('User Details'),
-
-                  _buildEditableRow([
-                    _buildEditableStat(stats, 'First Name', Icons.person, (value) => stats.copyWith(firstName: value)),
-                    _buildEditableStat(stats, 'Last Name', Icons.person_outline, (value) => stats.copyWith(lastName: value)),
-                  ]),
-
-                  _buildEditableRow([
-                    _buildEditableStat(stats, 'Email', Icons.email, (value) => stats.copyWith(email: value)),
-                    _buildEditableStat(stats, 'Gender', Icons.transgender, (value) => stats.copyWith(gender: value)),
-                  ]),
-
-                  _buildEditableRow([
-                    _buildEditableStat(stats, 'Birthday', Icons.cake, (value) => stats.copyWith(dateOfBirth: value)),
-                    _buildEditableStat(stats, 'Weight (kg)', Icons.monitor_weight, (value) => stats.copyWith(weight: value)),
-                  ]),
-
-                  _buildEditableStat(stats, 'Height (cm)', Icons.height, (value) => stats.copyWith(height: value)),
+                  _buildProfileDetails(stats),
 
                   const SizedBox(height: 30),
                   Row(
@@ -152,6 +131,62 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+  Widget _buildXPProgressBar(int level, int currentXP) {
+    return Column(
+      children: [
+        Text(
+          "Level $level",
+          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        const SizedBox(height: 10),
+        TweenAnimationBuilder<double>(
+          tween: Tween<double>(begin: 0, end: currentXP.toDouble()),
+          duration: const Duration(seconds: 2),
+          curve: Curves.easeOutCubic,
+          builder: (context, value, child) {
+            return Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blueAccent.withValues(alpha: 0.6),
+                        blurRadius: 5,
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  child: Container(
+                    width: (value / 100) * MediaQuery.of(context).size.width * 0.7,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white.withValues(alpha: 0.8),
+                    ),
+                  ),
+                ),
+                Text(
+                  "$currentXP XP",
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ],
+            );
+          },
+        ),
+      ],
+    );
+  }
+
   Widget _buildSectionTitle(String title) {
     return Text(
       title,
@@ -159,38 +194,51 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget _buildStatsGrid(UserStats stats) {
-    return GridView.count(
-      shrinkWrap: true,
-      crossAxisCount: 2,
-      crossAxisSpacing: 12,
-      mainAxisSpacing: 12,
-      childAspectRatio: 1.4,
-      physics: const NeverScrollableScrollPhysics(),
+  Widget _buildStatsDisplay(UserStats stats) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        StatCard(icon: Icons.fitness_center, label: 'Total Workouts', value: '${stats.totalWorkouts}'),
-        StatCard(icon: Icons.check_circle, label: 'Performed', value: '${stats.workoutsPerformed}'),
-        StatCard(icon: Icons.list, label: 'Total Exercises', value: '${stats.totalExercises}'),
-        StatCard(icon: Icons.history, label: 'Last Workout', value: stats.lastWorkoutName ?? 'None'),
+        _buildStatBox("Total Workouts", "${stats.totalWorkouts}", Icons.fitness_center),
+        _buildStatBox("Performed", "${stats.workoutsPerformed}", Icons.check_circle),
+        _buildStatBox("Total Exercises", "${stats.totalExercises}", Icons.list),
       ],
     );
   }
 
-  Widget _buildEditableRow(List<Widget> children) {
-    return Row(
-      children: children.map((widget) => Expanded(child: widget)).toList(),
+  Widget _buildProfileDetails(UserStats stats) {
+    return Column(
+      children: [
+        _buildDetailRow("First Name", stats.firstName, Icons.person),
+        _buildDetailRow("Last Name", stats.lastName, Icons.person_outline),
+        _buildDetailRow("Email", stats.email, Icons.email),
+        _buildDetailRow("Gender", stats.gender, Icons.transgender),
+      ],
     );
   }
 
-  Widget _buildEditableStat(UserStats stats, String label, IconData icon, Function(String) onChanged) {
-    return EditableStatCard(
-      icon: icon,
-      label: label,
-      value: (stats.toJson()[label.toLowerCase()] ?? '').toString(),
-      onChanged: (value) {
-        _updateUserDetails(onChanged(value));
-      },
-      onValueChanged: (String newValue) {},
+  Widget _buildDetailRow(String label, String value, IconData icon) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.white),
+          const SizedBox(width: 10),
+          Text(label, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+          const Spacer(),
+          Text(value, style: const TextStyle(fontSize: 18, color: Colors.white)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStatBox(String label, String value, IconData icon) {
+    return Column(
+      children: [
+        Icon(icon, size: 30, color: Colors.white),
+        const SizedBox(height: 5),
+        Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+        Text(value, style: const TextStyle(fontSize: 16, color: Colors.white)),
+      ],
     );
   }
 

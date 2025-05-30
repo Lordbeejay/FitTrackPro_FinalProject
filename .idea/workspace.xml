@@ -6,21 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb60c82-7835-4a1d-947d-e56ebe3aeb8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/core/models/user_stats.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/core/models/user_stats.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/core/services/sync_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/core/services/sync_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/dashboard/dashboard_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/dashboard/dashboard_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/profile/profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/splash/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/splash/splash_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goal_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goal_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goal_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goal_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goals_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/goals/goals_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/homepage/workout_home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/homepage/workout_home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/mini_challenge/mini_challenge_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/mini_challenge/mini_challenge_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/mini_challenge/mini_challenge_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/mini_challenge/mini_challenge_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/planner/routine_planner_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/planner/routine_planner_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/roulette/workout_roulette_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/features/workout/roulette/workout_roulette_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitrack_pro/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/fitrack_pro/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
