@@ -1,141 +1,126 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:fitrack_pro/core/services/goal_service.dart';
-import 'package:fitrack_pro/core/models/goal.dart';
 
 class GoalForm extends StatefulWidget {
-  final Goal? goal; // If null → creating new, else → editing
-
-  const GoalForm({super.key, this.goal});
+  final GoalService goalService;
+  const GoalForm({super.key, required this.goalService});
 
   @override
   State<GoalForm> createState() => _GoalFormState();
 }
 
 class _GoalFormState extends State<GoalForm> {
+  final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
-  final _descriptionController = TextEditingController();
-  final _targetValueController = TextEditingController();
+  final _descController = TextEditingController();
+  final _targetController = TextEditingController();
 
   @override
-  void initState() {
-    super.initState();
-    if (widget.goal != null) {
-      _titleController.text = widget.goal!.title;
-      _descriptionController.text = widget.goal!.description;
-      _targetValueController.text = widget.goal!.targetValue.toString();
-    }
+  void dispose() {
+    _titleController.dispose();
+    _descController.dispose();
+    _targetController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.goal == null ? 'Create Goal' : 'Edit Goal',
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: const Color(0xFF6A11CB), // Purplish tone
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.home),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Card(
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      elevation: 8,
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Add New Goal',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF6A11CB),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      _buildTextField(_titleController, 'Goal Title', Icons.title),
-                      const SizedBox(height: 16),
-                      _buildTextField(_descriptionController, 'Goal Description', Icons.description),
-                      const SizedBox(height: 16),
-                      _buildTextField(_targetValueController, 'Target Value', Icons.bar_chart, keyboardType: TextInputType.number),
-                      const SizedBox(height: 24),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: _saveGoal,
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            backgroundColor: const Color(0xFF2575FC),
-                          ),
-                          child: const Text('Save Goal', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
-                        ),
-                      ),
-                    ],
+              ),
+              const SizedBox(height: 18),
+              TextFormField(
+                controller: _titleController,
+                decoration: InputDecoration(
+                  labelText: 'Goal Title',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF6A11CB), width: 2),
+                  ),
+                ),
+                validator: (v) => v == null || v.isEmpty ? 'Enter a title' : null,
+              ),
+              const SizedBox(height: 14),
+              TextFormField(
+                controller: _descController,
+                decoration: InputDecoration(
+                  labelText: 'Description',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF2575FC), width: 2),
+                  ),
+                ),
+                validator: (v) => v == null || v.isEmpty ? 'Enter a description' : null,
+              ),
+              const SizedBox(height: 14),
+              TextFormField(
+                controller: _targetController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Target Weight (kg)',
+                  suffixText: 'kg',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF6A11CB), width: 2),
+                  ),
+                ),
+                validator: (v) => v == null || v.isEmpty ? 'Enter a target weight' : null,
+              ),
+              const SizedBox(height: 22),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF6A11CB),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      widget.goalService.createGoal(
+                        _titleController.text.trim(),
+                        _descController.text.trim(),
+                        double.tryParse(_targetController.text.trim()) ?? 0,
+                      );
+                      Navigator.of(context).pop();
+                    }
+                  },
+                  child: const Text(
+                    'Save Goal',
+                    style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-            ),
+            ],
           ),
         ),
-      ),
-    );
-  }
-
-  void _saveGoal() {
-    final goalService = Provider.of<GoalService>(context, listen: false);
-
-    if (widget.goal == null) {
-      goalService.createGoal(
-        _titleController.text,
-        _descriptionController.text,
-        double.parse(_targetValueController.text),
-      );
-    } else {
-      goalService.updateGoal(
-        widget.goal!.id,
-        _titleController.text,
-        _descriptionController.text,
-        double.parse(_targetValueController.text),
-      );
-    }
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(widget.goal == null ? 'Goal Created 🎯' : 'Goal Updated ✅'),
-        duration: const Duration(seconds: 2),
-      ),
-    );
-    Navigator.pop(context);
-  }
-
-  Widget _buildTextField(TextEditingController controller, String label, IconData icon, {TextInputType keyboardType = TextInputType.text}) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: keyboardType,
-      decoration: InputDecoration(
-        labelText: label,
-        prefixIcon: Icon(icon, color: Colors.deepPurpleAccent),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        filled: true,
-        fillColor: Colors.white.withValues(),
       ),
     );
   }

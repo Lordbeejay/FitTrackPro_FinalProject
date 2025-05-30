@@ -6,16 +6,17 @@ import 'package:uuid/uuid.dart';
 import 'package:fitrack_pro/core/models/goal.dart';
 
 class GoalService with ChangeNotifier {
+  final String userId;
   final List<Goal> _goals = [];
   late File _goalsFile;
 
-  GoalService() {
+  GoalService({required this.userId}) {
     _init();
   }
 
   Future<void> _init() async {
     final dir = await getApplicationDocumentsDirectory();
-    _goalsFile = File('${dir.path}/goals.json');
+    _goalsFile = File('${dir.path}/goals_$userId.json'); // user-specific file
 
     if (await _goalsFile.exists()) {
       final content = await _goalsFile.readAsString();
@@ -35,6 +36,7 @@ class GoalService with ChangeNotifier {
     final now = DateTime.now();
     final goal = Goal(
       id: const Uuid().v4(),
+      userId: userId, // associate with user
       title: title,
       description: description,
       targetValue: targetValue,
@@ -69,11 +71,10 @@ class GoalService with ChangeNotifier {
     notifyListeners();
   }
 
-  void updateProgress(String id, double newCurrentValue) {
+  void updateCurrentValue(String id, double newCurrentValue) {
     final goalIndex = _goals.indexWhere((goal) => goal.id == id);
     if (goalIndex != -1) {
-      final oldGoal = _goals[goalIndex];
-      _goals[goalIndex] = oldGoal.copyWith(
+      _goals[goalIndex] = _goals[goalIndex].copyWith(
         currentValue: newCurrentValue,
         updatedAt: DateTime.now(),
       );

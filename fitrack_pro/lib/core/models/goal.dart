@@ -1,5 +1,6 @@
 class Goal {
   final String id;
+  final String userId; // <-- Add this
   final String title;
   final String description;
   final double targetValue;
@@ -9,6 +10,7 @@ class Goal {
 
   Goal({
     required this.id,
+    required this.userId, // <-- Add this
     required this.title,
     required this.description,
     required this.targetValue,
@@ -17,34 +19,31 @@ class Goal {
     required this.updatedAt,
   });
 
-  // 👇 fromJson
-  factory Goal.fromJson(Map<String, dynamic> json) {
-    return Goal(
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
-      targetValue: (json['targetValue'] as num).toDouble(),
-      currentValue: (json['currentValue'] as num).toDouble(),
-      createdAt: DateTime.parse(json['createdAt']),
-      updatedAt: DateTime.parse(json['updatedAt']),
-    );
-  }
+  factory Goal.fromJson(Map<String, dynamic> json) => Goal(
+        id: json['id'],
+        userId: json['userId'], // <-- Add this
+        title: json['title'],
+        description: json['description'],
+        targetValue: (json['targetValue'] as num).toDouble(),
+        currentValue: (json['currentValue'] as num).toDouble(),
+        createdAt: DateTime.parse(json['createdAt']),
+        updatedAt: DateTime.parse(json['updatedAt']),
+      );
 
-  // 👇 toJson
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'description': description,
-      'targetValue': targetValue,
-      'currentValue': currentValue,
-      'createdAt': createdAt.toIso8601String(),
-      'updatedAt': updatedAt.toIso8601String(),
-    };
-  }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'userId': userId, // <-- Add this
+        'title': title,
+        'description': description,
+        'targetValue': targetValue,
+        'currentValue': currentValue,
+        'createdAt': createdAt.toIso8601String(),
+        'updatedAt': updatedAt.toIso8601String(),
+      };
 
-  // Copy method to update fields easily
   Goal copyWith({
+    String? id,
+    String? userId,
     String? title,
     String? description,
     double? targetValue,
@@ -53,7 +52,8 @@ class Goal {
     DateTime? updatedAt,
   }) {
     return Goal(
-      id: id,
+      id: id ?? this.id,
+      userId: userId ?? this.userId,
       title: title ?? this.title,
       description: description ?? this.description,
       targetValue: targetValue ?? this.targetValue,
