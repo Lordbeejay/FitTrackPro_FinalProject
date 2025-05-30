@@ -2,50 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'roulette_controller.dart';
 
-void _drawSegmentText(Canvas canvas, String text, double startAngle,
-    double sweepAngle, double radius) {
-  canvas.save();
-
-  final textStyle = TextStyle(
-    color: Colors.white,
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
-    shadows: [
-      Shadow(
-        blurRadius: 2,
-        color: Colors.black54,
-        offset: Offset(1, 1),
-      ),
-    ],
-  );
-
-  final textPainter = TextPainter(
-    text: TextSpan(text: text, style: textStyle),
-    textDirection: TextDirection.ltr,
-  );
-  textPainter.layout();
-
-  final textWidth = textPainter.width;
-  final textHeight = textPainter.height;
-  final centerAngle = startAngle + sweepAngle / 2;
-  final textRadius = radius * 0.6;
-  final x = cos(centerAngle) * textRadius;
-  final y = sin(centerAngle) * textRadius;
-
-  canvas.translate(x, y);
-  canvas.rotate(centerAngle);
-
-  if (centerAngle > pi / 2 && centerAngle < 3 * pi / 2) {
-    canvas.rotate(pi);
-  }
-
-  textPainter.paint(canvas, Offset(-textWidth / 2, -textHeight / 2));
-
-  canvas.restore();
-}
-
 class WorkoutRoulettePage extends StatefulWidget {
-  const WorkoutRoulettePage({Key? key}) : super(key: key);
+  const WorkoutRoulettePage({super.key});
 
   @override
   State<WorkoutRoulettePage> createState() => _WorkoutRoulettePageState();
@@ -76,68 +34,86 @@ class _WorkoutRoulettePageState extends State<WorkoutRoulettePage> {
     final size = 300.0;
     final workouts = _controller.workouts;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Workout Roulette'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TweenAnimationBuilder<double>(
-              tween: Tween<double>(begin: 0, end: _angle),
-              duration: const Duration(seconds: 2),
-              curve: Curves.easeOutCubic,
-              builder: (context, value, child) {
-                return Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // wheel
-                    CustomPaint(
-                      size: Size(size, size),
-                      painter: _WheelPainter(
-                        workouts: workouts,
-                        angle: value,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TweenAnimationBuilder<double>(
+                tween: Tween<double>(begin: 0, end: _angle),
+                duration: const Duration(seconds: 2),
+                curve: Curves.easeOutCubic,
+                builder: (context, value, child) {
+                  return Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Wheel
+                      CustomPaint(
+                        size: Size(size, size),
+                        painter: _WheelPainter(
+                          workouts: workouts,
+                          angle: value,
+                        ),
                       ),
-                    ),
-                    // arrow pointer
-                    Positioned(
-                      top: -55,
-                      left: (size / 2) - 60,
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        size: 120,
-                        color: Colors.black,
+                      // Arrow pointer
+                      Positioned(
+                        top: -55,
+                        left: (size / 2) - 60,
+                        child: const Icon(
+                          Icons.arrow_drop_down,
+                          size: 120,
+                          color: Colors.white,
+                        ),
                       ),
+                    ],
+                  );
+                },
+              ),
+              const SizedBox(height: 32),
+              SizedBox(
+                width: 200,
+                height: 60,
+                child: ElevatedButton.icon(
+                  onPressed: _spinning ? null : _spinRoulette,
+                  icon: const Icon(Icons.casino, size: 32, color: Colors.white),
+                  label: const Text(
+                    'Spin',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                  ],
-                );
-              },
-            ),
-            const SizedBox(height: 32),
-            SizedBox(
-              width: 200,
-              height: 60,
-              child: ElevatedButton.icon(
-                onPressed: _spinning ? null : _spinRoulette,
-                icon: Icon(Icons.casino, size: 32),
-                label: const Text(
-                  'Spin',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: const Color(0xFF2575FC),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 24),
-            Text(
-              _controller.selectedWorkout != null
-                  ? 'Workout:\n${_controller.selectedWorkout}'
-                  : 'Spin to get a workout!',
-              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-          ],
+              const SizedBox(height: 24),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                child: Text(
+                  _controller.selectedWorkout != null
+                      ? 'Workout:\n${_controller.selectedWorkout}'
+                      : 'Spin to get a workout!',
+                  style: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                  key: ValueKey(_controller.selectedWorkout),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -156,25 +132,25 @@ class _WheelPainter extends CustomPainter {
     final anglePer = 2 * pi / workouts.length;
 
     final colors = [
-      Color(0xFF4285F4),
-      Color(0xFFDB4437),
-      Color(0xFFF4B400),
-      Color(0xFF0F9D58),
-      Color(0xFF9C27B0),
-      Color(0xFFFF5722),
-      Color(0xFF795548),
-      Color(0xFF607D8B),
-      Color(0xFFE91E63),
-      Color(0xFF009688),
-      Color(0xFF3F51B5),
-      Color(0xFFFF9800),
+      const Color(0xFF6A11CB),
+      const Color(0xFF2575FC),
+      const Color(0xFFDB4437),
+      const Color(0xFFF4B400),
+      const Color(0xFF0F9D58),
+      const Color(0xFF9C27B0),
+      const Color(0xFFFF5722),
+      const Color(0xFF795548),
+      const Color(0xFF607D8B),
+      const Color(0xFFE91E63),
+      const Color(0xFF009688),
+      const Color(0xFF3F51B5),
     ];
 
     canvas.save();
     canvas.translate(center.dx, center.dy);
     canvas.rotate(angle - pi / 2);
 
-    // slices
+    // Draw wheel slices
     for (int i = 0; i < workouts.length; i++) {
       final segmentColor = colors[i % colors.length];
       final paint = Paint()
@@ -188,34 +164,9 @@ class _WheelPainter extends CustomPainter {
         true,
         paint,
       );
-
-      // slices border
-      final borderPaint = Paint()
-        ..color = Colors.white
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1;
-
-      canvas.drawArc(
-        Rect.fromCircle(center: Offset(0, 0), radius: radius),
-        i * anglePer,
-        anglePer,
-        true,
-        borderPaint,
-      );
     }
 
-    // text on each slices
-    for (int i = 0; i < workouts.length; i++) {
-      _drawSegmentText(
-        canvas,
-        workouts[i].name,
-        i * anglePer,
-        anglePer,
-        radius,
-      );
-    }
-
-    // center circle
+    // Draw center circle
     final centerPaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill;

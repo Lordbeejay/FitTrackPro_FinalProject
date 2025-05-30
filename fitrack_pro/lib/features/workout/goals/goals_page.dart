@@ -13,35 +13,43 @@ class GoalsPage extends StatelessWidget {
     final goals = goalService.getGoals();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Goals'),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: goals.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: GoalCard(goal: goals[index]), // Use GoalCard here
-                );
-              },
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
           ),
-        ],
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: goals.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    child: GoalCard(goal: goals[index]), // Modernized goal card
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         heroTag: 'addGoal',
+        backgroundColor: const Color(0xFF2575FC),
+        elevation: 8,
         onPressed: () {
-          // Open GoalForm when FAB is pressed
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const GoalForm()),
           );
         },
         tooltip: 'Create New Goal',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, size: 30, color: Colors.white),
       ),
     );
   }

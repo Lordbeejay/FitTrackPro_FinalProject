@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:fitrack_pro/features/workout/homepage/workout_home_page.dart';
 import 'package:fitrack_pro/features/workout/goals/goals_page.dart';
 import 'package:fitrack_pro/features/workout/planner/routine_planner_page.dart';
@@ -7,6 +9,7 @@ import 'package:fitrack_pro/features/auth/login/login_page.dart';
 import 'package:fitrack_pro/core/services/auth_service.dart';
 import 'package:fitrack_pro/core/services/xp_service.dart';
 import 'package:fitrack_pro/features/workout/roulette/workout_roulette_page.dart';
+import 'package:fitrack_pro/core/services/sync_service.dart';
 
 class DashboardPage extends StatefulWidget {
   final String username;
@@ -27,11 +30,29 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
   late final XPService _xpService;
+  final SyncService _syncService = SyncService();
+  StreamSubscription<ConnectivityResult>? _connectivitySub;
 
   @override
   void initState() {
     super.initState();
     _xpService = XPService(username: widget.username);
+
+    // Initial sync
+    _syncService.syncUserData(widget.username);
+
+    // Optional: sync when connectivity is restored
+    _connectivitySub = Connectivity().onConnectivityChanged.listen((result) {
+      if (result != ConnectivityResult.none) {
+        _syncService.syncUserData(widget.username);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _connectivitySub?.cancel();
+    super.dispose();
   }
 
   void _onItemTapped(int index) {
@@ -89,7 +110,7 @@ class _DashboardPageState extends State<DashboardPage> {
         return ProfilePage(
           username: widget.username,
           onLogout: _confirmLogout,
-          lastWorkoutName: 'None yet', // can be updated dynamically later
+          lastWorkoutName: 'None yet', // optional dynamic update
           totalExercises: 0,
           totalWorkouts: 0,
         );

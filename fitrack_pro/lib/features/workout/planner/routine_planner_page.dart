@@ -1050,10 +1050,10 @@ class RoutineDetailsDialog extends StatelessWidget {
               Text('Duration: ${routine.durationInMinutes} mins', style: const TextStyle(fontSize: 16)),
               const SizedBox(height: 8),
               // Goal
-              if (routine.associatedGoal != null) ...[
-                const Text('Goal:', style: TextStyle(fontWeight: FontWeight.bold)),
-                GoalCard(goal: routine.associatedGoal),
-              ],
+              ...[
+              const Text('Goal:', style: TextStyle(fontWeight: FontWeight.bold)),
+              GoalCard(goal: routine.associatedGoal),
+            ],
               const SizedBox(height: 24),
               // Mark as Done Button
               SizedBox(

@@ -71,9 +71,13 @@ class LocalDatabaseService {
   Future<Map<String, dynamic>> getUserStats(String username) async {
     final data = await _readData();
     final users = (data['users'] as List?) ?? [];
-    final user = users.firstWhere((u) => u['username'] == username, orElse: () => null);
+    final user = users.cast<Map<String, dynamic>>().firstWhere(
+          (u) => u['username'] == username,
+      orElse: () => {},
+    );
 
-    return user?['stats'] ?? {
+
+    return user['stats'] ?? {
       'totalWorkouts': 0,
       'workoutsPerformed': 0,
       'totalExercises': 0,

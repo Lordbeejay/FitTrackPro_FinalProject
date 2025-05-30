@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   final VoidCallback onGetStarted;
-  const SplashScreen({Key? key, required this.onGetStarted}) : super(key: key);
+  const SplashScreen({super.key, required this.onGetStarted});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

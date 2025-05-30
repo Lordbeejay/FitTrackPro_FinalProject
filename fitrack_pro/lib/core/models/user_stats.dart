@@ -33,17 +33,17 @@ class UserStats {
       totalWorkouts: json['totalWorkouts'] ?? 0,
       workoutsPerformed: json['workoutsPerformed'] ?? 0,
       totalExercises: json['totalExercises'] ?? 0,
-      lastWorkoutName: json['lastWorkoutName'],
+      lastWorkoutName: json['lastWorkoutName'] ?? 'Unknown Workout',
       lastWorkoutDate: json['lastWorkoutDate'] != null
           ? DateTime.tryParse(json['lastWorkoutDate'])
           : null,
-      firstName: json['firstName'] ?? '',
-      lastName: json['lastName'] ?? '',
-      email: json['email'] ?? '',
-      gender: json['gender'] ?? '',
-      dateOfBirth: json['dateOfBirth'] ?? '',
-      weight: json['weight'] ?? '',
-      height: json['height'] ?? '',
+      firstName: json['firstName'] ?? 'N/A',
+      lastName: json['lastName'] ?? 'N/A',
+      email: json['email'] ?? 'Not Provided',
+      gender: json['gender'] ?? 'Prefer not to say',
+      dateOfBirth: json['dateOfBirth'] ?? 'Unknown',
+      weight: json['weight'] ?? '0.0 kg',
+      height: json['height'] ?? '0.0 cm',
     );
   }
 
