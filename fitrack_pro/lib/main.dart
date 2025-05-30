@@ -25,7 +25,6 @@ void main() async {
   runApp(const WorkoutApp());
 }
 
-
 class WorkoutApp extends StatefulWidget {
   const WorkoutApp({super.key});
 
@@ -41,7 +40,6 @@ class _WorkoutAppState extends State<WorkoutApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService()),
-        ChangeNotifierProvider(create: (_) => GoalService()),
         ChangeNotifierProvider(create: (_) => RoutineService()),
         ChangeNotifierProvider(create: (_) => XPService(username: '')),
       ],
@@ -61,16 +59,26 @@ class _WorkoutAppState extends State<WorkoutApp> {
             );
           }
 
-          return MaterialApp(
-            title: 'FitTrack Pro',
-            theme: ThemeData(primarySwatch: Colors.blue),
-            home: username == null
-                ? LoginPage(authService: authService)
-                : DashboardPage(
-                    username: username,
-                    authService: authService,
-                    xpService: Provider.of<XPService>(context, listen: false),
-                  ),
+          if (username == null) {
+            return MaterialApp(
+              title: 'FitTrack Pro',
+              theme: ThemeData(primarySwatch: Colors.blue),
+              home: LoginPage(authService: authService),
+            );
+          }
+
+          // Only provide GoalService when user is logged in
+          return ChangeNotifierProvider(
+            create: (_) => GoalService(userId: username),
+            child: MaterialApp(
+              title: 'FitTrack Pro',
+              theme: ThemeData(primarySwatch: Colors.blue),
+              home: DashboardPage(
+                username: username,
+                authService: authService,
+                xpService: Provider.of<XPService>(context, listen: false),
+              ),
+            ),
           );
         },
       ),
