@@ -8,10 +8,10 @@ class MiniChallengeCard extends StatefulWidget {
   final VoidCallback onStart;
 
   const MiniChallengeCard({
-    Key? key,
+    super.key,
     required this.challenge,
     required this.onStart,
-  }) : super(key: key);
+  });
 
   @override
   State<MiniChallengeCard> createState() => _MiniChallengeCardState();

@@ -167,10 +167,10 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
   Widget _buildHomeScreen() {
     if (_isWorkoutInProgress) return _buildWorkoutInProgressScreen();
 
-    final MiniChallengeService _challengeService = MiniChallengeService();
+    final MiniChallengeService challengeService = MiniChallengeService();
 
     return FutureBuilder<MiniChallenge>(
-      future: _challengeService.getTodayChallenge(),
+      future: challengeService.getTodayChallenge(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
@@ -246,7 +246,7 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
             MiniChallengeCard(
               challenge: challenge,
               onStart: () async {
-                final completed = await _challengeService.isChallengeCompleted();
+                final completed = await challengeService.isChallengeCompleted();
                 if (completed) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('You already completed today\'s challenge!')),
@@ -331,6 +331,8 @@ class _WorkoutHomePageState extends State<WorkoutHomePage> {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }

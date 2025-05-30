@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitrack_pro/core/models/mini_challenge.dart';
 import 'package:fitrack_pro/core/services/mini_challenge_service.dart';
-import 'package:fitrack_pro/core/services/xp_service.dart';
 
 class MiniChallengeScreen extends StatefulWidget {
   final MiniChallenge challenge;
   final VoidCallback onComplete;
 
-  const MiniChallengeScreen({Key? key, required this.challenge, required this.onComplete}) : super(key: key);
+  const MiniChallengeScreen({super.key, required this.challenge, required this.onComplete});
 
   @override
   State<MiniChallengeScreen> createState() => _MiniChallengeScreenState();
 }
 
 class _MiniChallengeScreenState extends State<MiniChallengeScreen> {
-  Stopwatch _stopwatch = Stopwatch();
+  final Stopwatch _stopwatch = Stopwatch();
   int _reps = 0;
   bool _isCompleted = false;
   late TextEditingController _repsController;
