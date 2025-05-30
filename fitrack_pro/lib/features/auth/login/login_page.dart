@@ -15,9 +15,9 @@ class LoginPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+            colors: [Color(0xFFB299E5), Color(0xFF9DCEFF)], // purple left, blue right
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
           ),
         ),
         child: Padding(
@@ -27,22 +27,19 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const CircleAvatar(
-                    radius: 60,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.fitness_center,
-                      size: 60,
-                      color: Color(0xFF2575FC),
-                    ),
+                  Image.asset(
+                    'assets/images/ftp-logo-white.png',
+                    width: 200,
+                    height: 200,
                   ),
                   const SizedBox(height: 30),
                   const Text(
-                    'FitTrack Pro',
+                    'Welcome Back',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
+                      letterSpacing: 1.1,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -68,7 +65,11 @@ class LoginPage extends StatelessWidget {
                     },
                     child: const Text(
                       "Don't have an account? Sign up",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ],
@@ -155,10 +156,16 @@ class _LoginFormState extends State<LoginForm> {
         children: [
           TextFormField(
             controller: _usernameController,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Username',
-              prefixIcon: Icon(Icons.person),
-              border: OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.person, color: Color(0xFF7F53AC)),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF7F53AC), width: 2),
+              ),
             ),
             validator: (value) =>
             value == null || value.isEmpty ? 'Please enter username' : null,
@@ -167,10 +174,16 @@ class _LoginFormState extends State<LoginForm> {
           TextFormField(
             controller: _passwordController,
             obscureText: true,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Password',
-              prefixIcon: Icon(Icons.lock),
-              border: OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.lock, color: Color(0xFF7F53AC)),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF7F53AC), width: 2),
+              ),
             ),
             validator: (value) =>
             value == null || value.isEmpty ? 'Please enter password' : null,
@@ -178,29 +191,56 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _isLoading ? null : _login,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (_isLoading)
-                    const SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: CircularProgressIndicator(
-                        color: Colors.white,
-                        strokeWidth: 2,
-                      ),
+            child: GestureDetector(
+              onTap: _isLoading ? null : _login,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: _isLoading ? 0.7 : 1.0,
+                child: Container(
+                  height: 56,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF9DCEFF), Color(0xFFB299E5)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
                     ),
-                  if (_isLoading) const SizedBox(width: 12),
-                  const Text('Login', style: TextStyle(fontSize: 16)),
-                ],
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.08),
+                        blurRadius: 12,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: _isLoading
+                        ? const SizedBox(
+                            height: 24,
+                            width: 24,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 2.5,
+                            ),
+                          )
+                        : Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.login_rounded, color: Colors.white, size: 24),
+                              const SizedBox(width: 10),
+                              const Text(
+                                'Login',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  letterSpacing: 1.1,
+                                ),
+                              ),
+                            ],
+                          ),
+                  ),
+                ),
               ),
             ),
           ),
